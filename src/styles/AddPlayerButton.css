@@ -1,0 +1,17 @@
+.add-player-button {
+	background: #021275;
+	border: none;
+	color: #fff;
+	font-family: 'Spectral', serif;
+	font-size: 1.2rem;
+	margin: 1rem;
+	padding: .6rem;
+	text-transform: uppercase;
+	text-shadow: 2px 2px #000;
+	width: auto;
+}
+
+.add-player-button:hover {
+	color: #F0B96C;
+	cursor: pointer;
+}

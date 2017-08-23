@@ -1,0 +1,26 @@
+import React from 'react';
+import './styles/ScoreButtonList.css';
+
+import ScoreButton from './ScoreButton';
+
+const ScoreButtonList = (props) => {
+	const scoreButtons = props.buttonValues.map((value, idx) => {
+		return (
+			<ScoreButton
+				key={idx}
+				value={value}
+				onSelectValue={props.onSelectValue}
+			/>
+		);
+	});
+
+	return (
+		<div className="score-button-list-container">
+			<ul>
+				{scoreButtons}
+			</ul>
+		</div>
+	);
+};
+
+export default ScoreButtonList;

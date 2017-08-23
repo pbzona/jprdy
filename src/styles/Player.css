@@ -1,0 +1,76 @@
+.player-container {
+	display: inline;
+	margin: 1rem;
+	overflow: auto;
+	text-align: center;
+	width: 25rem;
+}
+
+.display-player-score {
+	background-color: #021275;
+	color: #fff;
+	display: block;
+	float: left;
+	text-align: center;
+	width: 100%;
+	margin-bottom: .1rem;
+}
+
+.display-player-score h2 {
+	font-size: 2rem;
+	text-shadow: 2px 2px #000;
+}
+
+.display-player-name {
+	background-color: #021275;
+	color: #fff;
+	float: left;
+	font-family: 'Rock Salt', cursive;
+	height: 9rem;
+	width: 100%;
+}
+
+.display-player-name h2 {
+	font-size: 3.6rem;
+	line-height: 1.6rem;
+}
+
+.display-player-name h2:hover {
+	cursor: pointer;
+}
+
+.answer-button {
+	background: #eee;
+	border: none;
+	font-size: 2rem;
+	height: 3rem;
+	width: 50%;
+}
+
+.answer-button:active, .answer-button:focus {
+	outline: none;
+}
+
+.answer-button:hover {
+	cursor: pointer;
+}
+
+.right {
+	color: #579532;
+	transition: color .4s ease, background .4s ease;
+}
+
+.right:hover {
+	background: #579532;
+	color: #eee;
+}
+
+.wrong {
+	color: #AA3939;
+	transition: color .3s ease, background .3s ease;
+}
+
+.wrong:hover {
+	background: #AA3939;
+	color: #eee;
+}

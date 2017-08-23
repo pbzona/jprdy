@@ -1,0 +1,23 @@
+@font-face {
+	font-family: 'Gyparody';
+	src: 
+		url(../fonts/gyparody.ttf)
+		format('truetype');
+}
+
+.header-main {
+	background: #021275;
+	color: #fff;
+	padding: 1.6rem;
+	text-align: center;
+	width: 100%;
+}
+
+.header-main h1 {
+	font-family: 'Gyparody';
+	font-size: 5rem;
+	letter-spacing: .8rem;
+	text-transform: uppercase;
+	margin: 0;
+}
+

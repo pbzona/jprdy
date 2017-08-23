@@ -1,0 +1,20 @@
+.score-button-container {
+	display: inline;
+}
+
+.score-button {
+	background: #021275;
+	border: none;
+	color: #F0B96C;
+	font-size: 2rem;
+	font-weight: 700;
+	margin: 1rem;
+	padding: .6rem;
+	text-shadow: 2px 2px #000;
+	width: 8rem;
+}
+
+.score-button:hover {
+	background: #00005C;
+	cursor: pointer;
+}
