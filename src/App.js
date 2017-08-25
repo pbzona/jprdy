@@ -13,13 +13,15 @@ class App extends Component {
 		this.state = {
 			buttonValues: [200, 400, 600, 800, 1000],
 			activeValue: 0,
-			players: []
+			players: [],
+			addingPlayer: false
 		};
 
 		this.onSelectValue = this.onSelectValue.bind(this);
 		this.onAddPlayer = this.onAddPlayer.bind(this);
 		this.onAnswer = this.onAnswer.bind(this);
 		this.onRoundChange = this.onRoundChange.bind(this);
+		this.onCreatePlayer = this.onCreatePlayer.bind(this);
 	}
 
 	onSelectValue(value) {
@@ -32,6 +34,7 @@ class App extends Component {
 		// this will take a player object with name and score props
 		this.setState({
 			players: this.state.players.concat(newPlayer),
+			addingPlayer: true
 		})
 	}
 
@@ -59,8 +62,32 @@ class App extends Component {
 		this.setState({
 			buttonValues: newValues
 		});
+	}
 
-		console.log('function ran')
+	shouldAddNewPlayer() {
+		const lastPlayer = this.state.players[this.state.players.length - 1]
+
+		if (this.state.players.length > 0 || lastPlayer === 'New') {
+			this.setState({
+				addingPlayer: true
+			});
+		} else {
+			this.setState({
+				addingPlayer: false
+			});
+		}
+	}
+
+	onCreatePlayer(e) {
+		e.preventDefault();
+
+		const newPlayer = document.querySelector('#add-new-player').value;
+		const newPlayerList = this.state.players.slice(0, -1).concat(newPlayer);
+
+		this.setState({
+			players: newPlayerList,
+			addingPlayer: false
+		});
 	}
 
   render() {
@@ -70,10 +97,13 @@ class App extends Component {
         <ScoreButtonList buttonValues={this.state.buttonValues} onSelectValue={this.onSelectValue}/>
         <PlayerList 
 					players={this.state.players}
-					onAnswer={this.onAnswer}/>
+					onAnswer={this.onAnswer}
+					needName={this.state.addingPlayer}
+					createPlayer={this.onCreatePlayer}/>
         <AddPlayer 
         	onAddPlayer={this.onAddPlayer} 
-        	numPlayers={this.state.players.length}/>
+        	numPlayers={this.state.players.length}
+        	shouldDisplay={!this.state.addingPlayer}/>
 
 
         <button onClick={() => console.log(this.state)}>Check State</button>

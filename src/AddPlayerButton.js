@@ -5,7 +5,7 @@ const AddPlayerButton = (props) => {
 	if (props.shouldDisplay) {
 		return (
 			<div>
-				<button className="add-player-button" onClick={props.onOpenModal}>Add New Player</button>
+				<button className="add-player-button" onClick={props.handleClick}>Add New Player</button>
 			</div>
 		);
 	} else {
