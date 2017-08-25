@@ -67,10 +67,34 @@
 
 .wrong {
 	color: #AA3939;
-	transition: color .3s ease, background .3s ease;
+	transition: color .4s ease, background .4s ease;
 }
 
 .wrong:hover {
 	background: #AA3939;
 	color: #eee;
+}
+
+.add-new-player {
+	font-size: 2.4rem;
+	margin-top: 20%;
+	width: 80%;
+}
+
+.add-player-submit {
+	background: #021275;
+	border: none;
+	color: #fff;
+	font-family: 'Spectral', serif;
+	font-size: 1.2rem;
+	margin: .4rem;
+	padding: .6rem;
+	text-transform: uppercase;
+	text-shadow: 2px 2px #000;
+	width: 80%;
+}
+
+.add-player-submit:hover {
+	color: #F0B96C;
+	cursor: pointer;
 }
