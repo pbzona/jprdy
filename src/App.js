@@ -14,7 +14,8 @@ class App extends Component {
 			buttonValues: [200, 400, 600, 800, 1000],
 			activeValue: 0,
 			players: [],
-			addingPlayer: false
+			addingPlayer: false,
+			round: 1
 		};
 
 		this.onSelectValue = this.onSelectValue.bind(this);
@@ -35,7 +36,7 @@ class App extends Component {
 		allScoreButtons.forEach((button) => {
 			button.classList.remove('activeButton')
 		});
-		
+
 		newActiveButton.classList.add('activeButton');
 	}
 
@@ -68,9 +69,12 @@ class App extends Component {
 			return value * 2;
 		});
 
-		this.setState({
-			buttonValues: newValues
-		});
+		if (this.state.round === 1) {
+			this.setState({
+				buttonValues: newValues,
+				round: 2
+			});
+		}
 	}
 
 	shouldAddNewPlayer() {
