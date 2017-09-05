@@ -8,6 +8,7 @@ const ScoreButtonList = (props) => {
 		return (
 			<ScoreButton
 				key={idx}
+				buttonKey={idx}
 				value={value}
 				onSelectValue={props.onSelectValue}
 			/>

@@ -24,10 +24,19 @@ class App extends Component {
 		this.onCreatePlayer = this.onCreatePlayer.bind(this);
 	}
 
-	onSelectValue(value) {
+	onSelectValue(value, key) {
 		this.setState({
 			activeValue: value
 		});
+
+		var allScoreButtons = document.querySelectorAll('.score-button');
+		var newActiveButton = document.querySelector(`.button-${key}`);
+
+		allScoreButtons.forEach((button) => {
+			button.classList.remove('activeButton')
+		});
+		
+		newActiveButton.classList.add('activeButton');
 	}
 
 	onAddPlayer(newPlayer) {

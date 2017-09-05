@@ -1,5 +1,5 @@
 .score-button-container {
-	display: inline;
+	display: inline-flex;
 }
 
 .score-button {
@@ -17,4 +17,12 @@
 .score-button:hover {
 	background: #00005C;
 	cursor: pointer;
+}
+
+.activeButton {
+	background: #AA3939;
+}
+
+.activeButton:hover {
+	background: #912020;
 }
