@@ -18,7 +18,7 @@ const Player = ({index, player, onAnswer, needName, createPlayer, score}) => {
 	return (
 		<div className="player-container">
 			<div className="display-player-score">
-				<h2 id={`score-${index}`}>{displayScore}</h2>
+				<h2 id={`score-${index}`} className="score">{displayScore}</h2>
 			</div>
 			<div className={`display-player-name display-player-${index}`}>
 				<h2 onClick={() => {

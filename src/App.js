@@ -21,6 +21,7 @@ class App extends Component {
 		
 		this.state = initState;
 
+		this.handleScores = this.handleScores.bind(this);
 		this.onReset = this.onReset.bind(this);
 		this.onSelectValue = this.onSelectValue.bind(this);
 		this.onAddPlayer = this.onAddPlayer.bind(this);
@@ -36,18 +37,29 @@ class App extends Component {
 			this.setState({
 				...appState
 			});
+			this.handleScores();
 		}
 	}
 
 	// Save state to localStorage on creation
 	componentDidMount() {
 		localStorage.setItem('appState', JSON.stringify(this.state));
+		this.handleScores();
 	}
 
 	// Save state to localStorage on update
 	componentDidUpdate() {
 		localStorage.setItem('appState', JSON.stringify(this.state));
-		console.log(JSON.parse(localStorage.getItem('appState')));
+		this.handleScores();
+	}
+
+	// Handle colors for positive and negative scores
+	handleScores() {
+		const playerScores = document.querySelectorAll('.score');
+
+		playerScores.forEach((playerScore, idx) => {
+			playerScore.style.color = this.state.playerScores[idx] >= 0 ? '#fff' : '#C54046';
+		});
 	}
 
 	// Reset state
@@ -94,8 +106,8 @@ class App extends Component {
 			}
 		});
 
-		const dollarValue = document.querySelector(`#score-${playerKey}`);
-		dollarValue.style.color = newScore >= 0 ? '#fff' : '#C54046';
+		// const dollarValue = document.querySelector(`#score-${playerKey}`);
+		// dollarValue.style.color = newScore >= 0 ? '#fff' : '#C54046';
 	}
 
 	// Handle round changes
