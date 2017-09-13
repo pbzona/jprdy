@@ -15,7 +15,8 @@ class App extends Component {
 			activeValue: 0,
 			players: [],
 			addingPlayer: false,
-			round: 1
+			round: 1,
+			playerScores: []
 		};
 
 		this.onSelectValue = this.onSelectValue.bind(this);
@@ -50,18 +51,25 @@ class App extends Component {
 
 	// score update handlers - need to get the key prop from players
 	onAnswer(playerKey, isCorrect) {
-		let dollarValue = document.querySelector(`#score-${playerKey}`);
+		// let dollarValue = document.querySelector(`#score-${playerKey}`);
 		
-		let score = parseInt(dollarValue.innerHTML.replace(/[,$]/g, ''), 10);
-		let newScore = isCorrect ? score + this.state.activeValue : score - this.state.activeValue;
+		// let score = parseInt(dollarValue.innerHTML.replace(/[,$]/g, ''), 10);
+		// let newScore = isCorrect ? score + this.state.activeValue : score - this.state.activeValue;
 
-		dollarValue.style.color = newScore >= 0 ? '#fff' : '#C54046';
+		// dollarValue.style.color = newScore >= 0 ? '#fff' : '#C54046';
 
-		if (newScore >= 0) {
-			dollarValue.innerHTML = `$${require('numeral')(newScore).format('0,0')}`;
-		} else {
-			dollarValue.innerHTML = `-$${require('numeral')(newScore * -1).format('0,0')}`;
-		}
+		// if (newScore >= 0) {
+		// 	dollarValue.innerHTML = `$${require('numeral')(newScore).format('0,0')}`;
+		// } else {
+		// 	dollarValue.innerHTML = `-$${require('numeral')(newScore * -1).format('0,0')}`;
+		// }
+		const newScore = isCorrect ? (this.state.playerScores[playerKey] + this.state.activeValue) : (this.state.playerScores[playerKey] - this.state.activeValue);
+
+		this.setState({
+			playerScores: {
+				[playerKey]: newScore
+			}
+		});
 	}
 
 	onRoundChange() {
@@ -99,7 +107,10 @@ class App extends Component {
 
 		this.setState({
 			players: newPlayerList,
-			addingPlayer: false
+			addingPlayer: false,
+			playerScores: {
+				[newPlayerList.length - 1]: 0
+			}
 		});
 	}
 
@@ -112,7 +123,8 @@ class App extends Component {
 					players={this.state.players}
 					onAnswer={this.onAnswer}
 					needName={this.state.addingPlayer}
-					createPlayer={this.onCreatePlayer}/>
+					createPlayer={this.onCreatePlayer}
+					playerScores={this.state.playerScores}/>
         <AddPlayer 
         	onAddPlayer={this.onAddPlayer} 
         	numPlayers={this.state.players.length}
@@ -127,6 +139,3 @@ class App extends Component {
 }
 
 export default App;
-
-// for debugging: saves state to localstorage:
-// () => window.localStorage.setItem('state', JSON.stringify(this.state))

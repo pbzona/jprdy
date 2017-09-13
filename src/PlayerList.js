@@ -13,7 +13,8 @@ const PlayerList = (props) => {
 				player={player} 
 				onAnswer={props.onAnswer} 
 				needName={props.needName}
-				createPlayer={props.createPlayer}/>
+				createPlayer={props.createPlayer}
+				score={props.playerScores[idx]}/>
 			);
 		}
 		return (
@@ -21,7 +22,8 @@ const PlayerList = (props) => {
 				key={idx} 
 				index={idx} 
 				player={player} 
-				onAnswer={props.onAnswer}/>
+				onAnswer={props.onAnswer}
+				score={props.playerScores[idx]}/>
 		);
 	});
 
