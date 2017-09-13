@@ -6,24 +6,37 @@ import ScoreButtonList from './ScoreButtonList';
 import PlayerList from './PlayerList';
 import AddPlayer from './AddPlayer';
 
+const initState = {
+	buttonValues: [200, 400, 600, 800, 1000],
+	activeValue: 0,
+	players: [],
+	addingPlayer: false,
+	round: 1,
+	playerScores: []
+};
+
 class App extends Component {
 	constructor(props) {
 		super(props);
 		
-		this.state = {
-			buttonValues: [200, 400, 600, 800, 1000],
-			activeValue: 0,
-			players: [],
-			addingPlayer: false,
-			round: 1,
-			playerScores: []
-		};
+		this.state = initState;
 
+		this.onReset = this.onReset.bind(this);
 		this.onSelectValue = this.onSelectValue.bind(this);
 		this.onAddPlayer = this.onAddPlayer.bind(this);
 		this.onAnswer = this.onAnswer.bind(this);
 		this.onRoundChange = this.onRoundChange.bind(this);
 		this.onCreatePlayer = this.onCreatePlayer.bind(this);
+	}
+
+	// Load from localStorage if present
+	componentWillMount() {
+		const appState = JSON.parse(localStorage.getItem('appState'));
+		if (appState) {
+			this.setState({
+				...appState
+			});
+		}
 	}
 
 	// Save state to localStorage on creation
@@ -35,6 +48,13 @@ class App extends Component {
 	componentDidUpdate() {
 		localStorage.setItem('appState', JSON.stringify(this.state));
 		console.log(JSON.parse(localStorage.getItem('appState')));
+	}
+
+	// Reset state
+	onReset() {
+		this.setState({
+			...initState
+		});
 	}
 
 	// Sets the active value when a score button is clicked
@@ -144,6 +164,7 @@ class App extends Component {
 
         <button onClick={() => console.log(this.state)}>Check State</button>
         <button onClick={this.onRoundChange}>Double</button>
+        <button onClick={this.onReset}>Reset</button>
       </div>
     );
   }
