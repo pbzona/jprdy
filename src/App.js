@@ -26,6 +26,17 @@ class App extends Component {
 		this.onCreatePlayer = this.onCreatePlayer.bind(this);
 	}
 
+	// Save state to localStorage on creation
+	componentDidMount() {
+		localStorage.setItem('appState', JSON.stringify(this.state));
+	}
+
+	// Save state to localStorage on update
+	componentDidUpdate() {
+		localStorage.setItem('appState', JSON.stringify(this.state));
+		console.log(JSON.parse(localStorage.getItem('appState')));
+	}
+
 	// Sets the active value when a score button is clicked
 	onSelectValue(value, key) {
 		this.setState({
