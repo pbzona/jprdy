@@ -161,8 +161,6 @@ class App extends Component {
         	numPlayers={this.state.players.length}
         	shouldDisplay={!this.state.addingPlayer}/>
 
-
-        <button onClick={() => console.log(this.state)}>Check State</button>
         <button onClick={this.onRoundChange}>Double</button>
         <button onClick={this.onReset}>Reset</button>
       </div>
