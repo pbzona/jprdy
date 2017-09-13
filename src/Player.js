@@ -13,10 +13,12 @@ const Player = ({index, player, onAnswer, needName, createPlayer, score}) => {
 		);
 	}
 
+	const displayScore = score >= 0 ? `$${score}` : `-$${Math.abs(score)}`;
+
 	return (
 		<div className="player-container">
 			<div className="display-player-score">
-				<h2 id={`score-${index}`}>${score || '0'}</h2>
+				<h2 id={`score-${index}`}>{displayScore}</h2>
 			</div>
 			<div className={`display-player-name display-player-${index}`}>
 				<h2 onClick={() => {

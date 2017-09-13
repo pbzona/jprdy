@@ -26,6 +26,7 @@ class App extends Component {
 		this.onCreatePlayer = this.onCreatePlayer.bind(this);
 	}
 
+	// Sets the active value when a score button is clicked
 	onSelectValue(value, key) {
 		this.setState({
 			activeValue: value
@@ -41,6 +42,7 @@ class App extends Component {
 		newActiveButton.classList.add('activeButton');
 	}
 
+	// Intermediate state when adding a new player
 	onAddPlayer(newPlayer) {
 		// this will take a player object with name and score props
 		this.setState({
@@ -72,6 +74,7 @@ class App extends Component {
 		});
 	}
 
+	// Handle round changes
 	onRoundChange() {
 		const newValues = this.state.buttonValues.map((value) => {
 			return value * 2;
@@ -85,6 +88,7 @@ class App extends Component {
 		}
 	}
 
+	// If less than four players, allow adding new ones
 	shouldAddNewPlayer() {
 		const lastPlayer = this.state.players[this.state.players.length - 1]
 
@@ -99,6 +103,7 @@ class App extends Component {
 		}
 	}
 
+	// Adds a new player to the state when AddPlayer is submitted
 	onCreatePlayer(e) {
 		e.preventDefault();
 
