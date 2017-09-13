@@ -13,7 +13,7 @@ const Player = ({index, player, onAnswer, needName, createPlayer, score}) => {
 		);
 	}
 
-	const displayScore = score >= 0 ? `$${score}` : `-$${Math.abs(score)}`;
+	const displayScore = score >= 0 ? `$${require('numeral')(score).format('0,0')}` : `-$${require('numeral')(score * -1).format('0,0')}`;
 
 	return (
 		<div className="player-container">

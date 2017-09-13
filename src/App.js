@@ -51,20 +51,8 @@ class App extends Component {
 		})
 	}
 
-	// score update handlers - need to get the key prop from players
+	// Score update handlers - need to get the key prop from players
 	onAnswer(playerKey, isCorrect) {
-		// let dollarValue = document.querySelector(`#score-${playerKey}`);
-		
-		// let score = parseInt(dollarValue.innerHTML.replace(/[,$]/g, ''), 10);
-		// let newScore = isCorrect ? score + this.state.activeValue : score - this.state.activeValue;
-
-		// dollarValue.style.color = newScore >= 0 ? '#fff' : '#C54046';
-
-		// if (newScore >= 0) {
-		// 	dollarValue.innerHTML = `$${require('numeral')(newScore).format('0,0')}`;
-		// } else {
-		// 	dollarValue.innerHTML = `-$${require('numeral')(newScore * -1).format('0,0')}`;
-		// }
 		const newScore = isCorrect ? (this.state.playerScores[playerKey] + this.state.activeValue) : (this.state.playerScores[playerKey] - this.state.activeValue);
 
 		this.setState({
@@ -72,6 +60,9 @@ class App extends Component {
 				[playerKey]: newScore
 			}
 		});
+
+		const dollarValue = document.querySelector(`#score-${playerKey}`);
+		dollarValue.style.color = newScore >= 0 ? '#fff' : '#C54046';
 	}
 
 	// Handle round changes
