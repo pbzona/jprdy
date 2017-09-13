@@ -65,9 +65,11 @@ class App extends Component {
 	// Score update handlers - need to get the key prop from players
 	onAnswer(playerKey, isCorrect) {
 		const newScore = isCorrect ? (this.state.playerScores[playerKey] + this.state.activeValue) : (this.state.playerScores[playerKey] - this.state.activeValue);
+		const otherScores = this.state.playerScores;
 
 		this.setState({
 			playerScores: {
+				...otherScores,
 				[playerKey]: newScore
 			}
 		});
@@ -111,11 +113,13 @@ class App extends Component {
 
 		const newPlayer = document.querySelector('.add-new-player').value;
 		const newPlayerList = this.state.players.slice(0, -1).concat(newPlayer);
+		const otherScores = this.state.playerScores;
 
 		this.setState({
 			players: newPlayerList,
 			addingPlayer: false,
 			playerScores: {
+				...otherScores,
 				[newPlayerList.length - 1]: 0
 			}
 		});
