@@ -3,7 +3,7 @@ import './styles/ScoreButtonList.css';
 
 import ScoreButton from './ScoreButton';
 
-const ScoreButtonList = (props) => {
+const ScoreButtonList = props => {
 	const scoreButtons = props.buttonValues.map((value, idx) => {
 		return (
 			<ScoreButton
@@ -17,9 +17,7 @@ const ScoreButtonList = (props) => {
 
 	return (
 		<div className="score-button-list-container">
-			<ul>
-				{scoreButtons}
-			</ul>
+			<ul>{scoreButtons}</ul>
 		</div>
 	);
 };

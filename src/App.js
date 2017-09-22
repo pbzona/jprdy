@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import './styles/App.css';	
+// import './styles/App.css';
 
 import Header from './Header';
 import ScoreButtonList from './ScoreButtonList';
@@ -18,7 +18,7 @@ const initState = {
 class App extends Component {
 	constructor(props) {
 		super(props);
-		
+
 		this.state = initState;
 
 		this.handleScores = this.handleScores.bind(this);
@@ -34,8 +34,10 @@ class App extends Component {
 	componentWillMount() {
 		const appState = JSON.parse(localStorage.getItem('appState'));
 		if (appState) {
-			this.setState({
-				...appState
+			this.setState(() => {
+				return {
+					...appState
+				};
 			});
 			this.handleScores();
 		}
@@ -53,33 +55,28 @@ class App extends Component {
 		this.handleScores();
 	}
 
-	// Handle colors for positive and negative scores
-	handleScores() {
-		const playerScores = document.querySelectorAll('.score');
-
-		playerScores.forEach((playerScore, idx) => {
-			playerScore.style.color = this.state.playerScores[idx] >= 0 ? '#fff' : '#C54046';
-		});
-	}
-
 	// Reset state
 	onReset() {
-		this.setState({
-			...initState
+		this.setState(() => {
+			return {
+				...initState
+			};
 		});
 	}
 
 	// Sets the active value when a score button is clicked
 	onSelectValue(value, key) {
-		this.setState({
-			activeValue: value
+		this.setState(() => {
+			return {
+				activeValue: value
+			};
 		});
 
 		var allScoreButtons = document.querySelectorAll('.score-button');
 		var newActiveButton = document.querySelector(`.button-${key}`);
 
-		allScoreButtons.forEach((button) => {
-			button.classList.remove('activeButton')
+		allScoreButtons.forEach(button => {
+			button.classList.remove('activeButton');
 		});
 
 		newActiveButton.classList.add('activeButton');
@@ -88,53 +85,62 @@ class App extends Component {
 	// Intermediate state when adding a new player
 	onAddPlayer(newPlayer) {
 		// this will take a player object with name and score props
-		this.setState({
-			players: this.state.players.concat(newPlayer),
-			addingPlayer: true
-		})
+		this.setState(() => {
+			return {
+				players: this.state.players.concat(newPlayer),
+				addingPlayer: true
+			};
+		});
 	}
 
 	// Score update handlers - need to get the key prop from players
 	onAnswer(playerKey, isCorrect) {
-		const newScore = isCorrect ? (this.state.playerScores[playerKey] + this.state.activeValue) : (this.state.playerScores[playerKey] - this.state.activeValue);
+		const newScore = isCorrect
+			? this.state.playerScores[playerKey] + this.state.activeValue
+			: this.state.playerScores[playerKey] - this.state.activeValue;
 		const otherScores = this.state.playerScores;
 
-		this.setState({
-			playerScores: {
-				...otherScores,
-				[playerKey]: newScore
-			}
+		this.setState(() => {
+			return {
+				playerScores: {
+					...otherScores,
+					[playerKey]: newScore
+				}
+			};
 		});
-
-		// const dollarValue = document.querySelector(`#score-${playerKey}`);
-		// dollarValue.style.color = newScore >= 0 ? '#fff' : '#C54046';
 	}
 
 	// Handle round changes
 	onRoundChange() {
-		const newValues = this.state.buttonValues.map((value) => {
+		const newValues = this.state.buttonValues.map(value => {
 			return value * 2;
 		});
 
 		if (this.state.round === 1) {
-			this.setState({
-				buttonValues: newValues,
-				round: 2
+			this.setState(() => {
+				return {
+					buttonValues: newValues,
+					round: 2
+				};
 			});
 		}
 	}
 
 	// If less than four players, allow adding new ones
 	shouldAddNewPlayer() {
-		const lastPlayer = this.state.players[this.state.players.length - 1]
+		const lastPlayer = this.state.players[this.state.players.length - 1];
 
 		if (this.state.players.length > 0 || lastPlayer === 'New') {
-			this.setState({
-				addingPlayer: true
+			this.setState(() => {
+				return {
+					addingPlayer: true
+				};
 			});
 		} else {
-			this.setState({
-				addingPlayer: false
+			this.setState(() => {
+				return {
+					addingPlayer: false
+				};
 			});
 		}
 	}
@@ -147,37 +153,54 @@ class App extends Component {
 		const newPlayerList = this.state.players.slice(0, -1).concat(newPlayer);
 		const otherScores = this.state.playerScores;
 
-		this.setState({
-			players: newPlayerList,
-			addingPlayer: false,
-			playerScores: {
-				...otherScores,
-				[newPlayerList.length - 1]: 0
-			}
+		this.setState(() => {
+			return {
+				players: newPlayerList,
+				addingPlayer: false,
+				playerScores: {
+					...otherScores,
+					[newPlayerList.length - 1]: 0
+				}
+			};
 		});
 	}
 
-  render() {
-    return (
-      <div className="App">
-        <Header title="Jeopardy!" />
-        <ScoreButtonList buttonValues={this.state.buttonValues} onSelectValue={this.onSelectValue}/>
-        <PlayerList 
+	// Handle colors for positive and negative scores
+	handleScores() {
+		const playerScores = document.querySelectorAll('.score');
+
+		playerScores.forEach((playerScore, idx) => {
+			playerScore.style.color =
+				this.state.playerScores[idx] >= 0 ? '#fff' : '#C54046';
+		});
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<Header title="Jprdy!" />
+				<ScoreButtonList
+					buttonValues={this.state.buttonValues}
+					onSelectValue={this.onSelectValue}
+				/>
+				<PlayerList
 					players={this.state.players}
 					onAnswer={this.onAnswer}
 					needName={this.state.addingPlayer}
 					createPlayer={this.onCreatePlayer}
-					playerScores={this.state.playerScores}/>
-        <AddPlayer 
-        	onAddPlayer={this.onAddPlayer} 
-        	numPlayers={this.state.players.length}
-        	shouldDisplay={!this.state.addingPlayer}/>
+					playerScores={this.state.playerScores}
+				/>
+				<AddPlayer
+					onAddPlayer={this.onAddPlayer}
+					numPlayers={this.state.players.length}
+					shouldDisplay={!this.state.addingPlayer}
+				/>
 
-        <button onClick={this.onRoundChange}>Double</button>
-        <button onClick={this.onReset}>Reset</button>
-      </div>
-    );
-  }
+				<button onClick={this.onRoundChange}>Double</button>
+				<button onClick={this.onReset}>Reset</button>
+			</div>
+		);
+	}
 }
 
 export default App;
