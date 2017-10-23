@@ -9,6 +9,8 @@ const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
 		'Shadows Into Light'
 	];
 
+	let activeFont = 0;
+
 	if (needName) {
 		return (
 			<div className="player-container">
@@ -35,10 +37,10 @@ const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
 			<div className={`display-player-name display-player-${index}`}>
 				<h2
 					onClick={() => {
-						let number = Math.floor(Math.random() * fonts.length);
+						activeFont = activeFont < 3 ? activeFont + 1 : 0;
 						document.querySelector(
 							`.display-player-${index}`
-						).style.fontFamily = `${fonts[number]}, cursive`;
+						).style.fontFamily = `${fonts[activeFont]}, cursive`;
 					}}
 				>
 					{player}
