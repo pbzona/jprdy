@@ -19,14 +19,14 @@ The third requirement has been easier to navigate, but has also left me in callb
 ## Design
 
 The genesis for this project was its design. I mentioned earlier that there are other React Jeopardy scoreboards out there that aren't aligned with my vision. What is my vision exactly? I'm glad you asked:
-  
+
   - Buttons from which you select an "active" value depending on the question being asked
   - A one-click "right" or "wrong" button to indicate whether a player answered correctly, and modify their current score based on the active value
   - Actually looks like Jeopardy
 
 This project was bootstrapped using `create-react-app`, so you can see the first two for yourself by installing the project and running `npm start` or `yarn start`.
 
-The third piece was the most fun to implement. For the header text, I used a free web font called Gyparody (great name). The actual Jeopardy number scores use a font called Swiss 911, which is closely related to Helvetica (my implementation). I used the Google Font's "Spectral" to mimic the question text in some buttons. Finally, as an Easter egg, player names (once added) are clickable. This changes the name to a random selection of one of four handwriting style fonts, also courtesy of Google.
+The third piece was the most fun to implement. For the header text, I used a free web font called Gyparody (great name). The actual Jeopardy number scores use a font called Swiss 911, which is closely related to Helvetica (my implementation). I used the Google Fonts' "Spectral" to mimic the question text in some buttons. Finally, as an Easter egg, player names (once added) are clickable. This changes the name to a random selection of one of four handwriting style fonts, also courtesy of Google.
 
 The end result is a style that looks pretty close to the real thing, in my opinion.
 
