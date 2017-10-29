@@ -5,6 +5,7 @@ import Header from './Header';
 import ScoreButtonList from './ScoreButtonList';
 import PlayerList from './PlayerList';
 import AddPlayer from './AddPlayer';
+import RoundChange from './RoundChange';
 
 const initState = {
 	buttonValues: [200, 400, 600, 800, 1000],
@@ -123,6 +124,12 @@ class App extends Component {
 					round: 2
 				};
 			});
+		} else {
+			this.setState(() => {
+				return {
+					round: 3
+				};
+			});
 		}
 	}
 
@@ -195,8 +202,12 @@ class App extends Component {
 					numPlayers={this.state.players.length}
 					shouldDisplay={!this.state.addingPlayer}
 				/>
+				<RoundChange
+					round={this.state.round}
+					onRoundChange={this.onRoundChange}
+					shouldDisplay={this.state.round < 3}
+				/>
 
-				<button onClick={this.onRoundChange}>Double</button>
 				<button onClick={this.onReset}>Reset</button>
 			</div>
 		);

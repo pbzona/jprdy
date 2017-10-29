@@ -13,7 +13,7 @@
 	float: left;
 	text-align: center;
 	width: 100%;
-	margin-bottom: .1rem;
+	margin-bottom: 0.1rem;
 }
 
 .display-player-score h2 {
@@ -42,12 +42,14 @@
 .answer-button {
 	background: #eee;
 	border: none;
+	border-radius: 0;
 	font-size: 2rem;
 	height: 3rem;
 	width: 50%;
 }
 
-.answer-button:active, .answer-button:focus {
+.answer-button:active,
+.answer-button:focus {
 	outline: none;
 }
 
@@ -57,7 +59,7 @@
 
 .right {
 	color: #579532;
-	transition: color .4s ease, background .4s ease;
+	transition: color 0.4s ease, background 0.4s ease;
 }
 
 .right:hover {
@@ -66,12 +68,12 @@
 }
 
 .wrong {
-	color: #AA3939;
-	transition: color .4s ease, background .4s ease;
+	color: #aa3939;
+	transition: color 0.4s ease, background 0.4s ease;
 }
 
 .wrong:hover {
-	background: #AA3939;
+	background: #aa3939;
 	color: #eee;
 }
 
@@ -87,14 +89,14 @@
 	color: #fff;
 	font-family: 'Spectral', serif;
 	font-size: 1.2rem;
-	margin: .4rem;
-	padding: .6rem;
+	margin: 0.4rem;
+	padding: 0.6rem;
 	text-transform: uppercase;
 	text-shadow: 2px 2px #000;
 	width: 80%;
 }
 
 .add-player-submit:hover {
-	color: #F0B96C;
+	color: #f0b96c;
 	cursor: pointer;
 }
