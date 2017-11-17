@@ -1,0 +1,31 @@
+.player-container {
+	display: inline;
+	margin: 1rem;
+	overflow: auto;
+	text-align: center;
+	width: 25rem;
+}
+
+.add-new-player {
+	font-size: 2.4rem;
+	margin-top: 20%;
+	width: 80%;
+}
+
+.add-player-submit {
+	background: #021275;
+	border: none;
+	color: #fff;
+	font-family: 'Spectral', serif;
+	font-size: 1.2rem;
+	margin: 0.4rem;
+	padding: 0.6rem;
+	text-transform: uppercase;
+	text-shadow: 2px 2px #000;
+	width: 80%;
+}
+
+.add-player-submit:hover {
+	color: #f0b96c;
+	cursor: pointer;
+}

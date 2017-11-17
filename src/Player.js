@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles/Player.css';
 
+import AddNewPlayer from './AddNewPlayer';
+
 const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
 	const fonts = [
 		'Rock Salt',
@@ -13,12 +15,7 @@ const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
 
 	if (needName) {
 		return (
-			<div className="player-container">
-				<input className="add-new-player" placeholder="Name" />
-				<button className="add-player-submit" onClick={createPlayer}>
-					Add
-				</button>
-			</div>
+			 <AddNewPlayer createPlayer={createPlayer}/>
 		);
 	}
 
