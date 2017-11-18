@@ -1,25 +1,25 @@
 {
-  "name": "jeopardy-scoreboard",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "numeral": "^2.0.6",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
-  },
-  "devDependencies": {
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.2.1",
-    "prettier": "^1.7.0",
-    "react-scripts": "1.0.11"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+	"name": "jprdy",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"numeral": "^2.0.6",
+		"react": "^15.6.1",
+		"react-dom": "^15.6.1"
+	},
+	"devDependencies": {
+		"eslint-config-airbnb": "^15.1.0",
+		"eslint-plugin-import": "^2.7.0",
+		"eslint-plugin-jsx-a11y": "^5.1.1",
+		"eslint-plugin-prettier": "^2.3.1",
+		"eslint-plugin-react": "^7.2.1",
+		"prettier": "^1.7.0",
+		"react-scripts": "1.0.11"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject"
+	}
 }
