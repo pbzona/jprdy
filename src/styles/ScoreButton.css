@@ -20,9 +20,9 @@
 }
 
 .activeButton {
-	background: #AA3939;
+	background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
 }
 
 .activeButton:hover {
-	background: #912020;
+	background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
 }
