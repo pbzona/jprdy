@@ -15,14 +15,10 @@
 }
 
 .score-button:hover {
-	background: #00005C;
+	background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
 	cursor: pointer;
 }
 
 .activeButton {
-	background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
-}
-
-.activeButton:hover {
 	background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
 }
