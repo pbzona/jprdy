@@ -45,6 +45,15 @@ const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
 			</div>
 			<div>
 				<button
+					className="answer-button daily-double"
+					onClick={() => console.log("Daily Double")}
+				>
+					Daily Double
+				</button>
+			</div>
+
+			<div>
+				<button
 					className="answer-button right"
 					onClick={() => onAnswer(index, true)}
 				>
@@ -57,6 +66,7 @@ const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
 					&#x2717;
 				</button>
 			</div>
+			
 		</div>
 	);
 };
