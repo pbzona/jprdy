@@ -13,7 +13,8 @@ const initState = {
 	players: [],
 	addingPlayer: false,
 	round: 1,
-	playerScores: []
+	playerScores: [],
+	isWagering: false
 };
 
 class App extends Component {
@@ -29,6 +30,8 @@ class App extends Component {
 		this.onAnswer = this.onAnswer.bind(this);
 		this.onRoundChange = this.onRoundChange.bind(this);
 		this.onCreatePlayer = this.onCreatePlayer.bind(this);
+		this.onWager = this.onWager.bind(this);
+		this.onStartWager = this.onStartWager.bind(this);
 	}
 
 	// Load from localStorage if present
@@ -182,6 +185,37 @@ class App extends Component {
 		});
 	}
 
+	// Starts a wager
+	onStartWager() {
+		this.setState(() => {
+			return {
+				isWagering: true
+			}
+		});
+	}
+
+	// Handles a wager, ie daily double
+	onWager(playerKey, isCorrect) {
+		const wager = document.querySelector('.player-wager').value;
+
+		console.log(wager)
+
+		const newScore = isCorrect
+			? this.state.playerScores[playerKey] + parseInt(wager, 10)
+			: this.state.playerScores[playerKey] - parseInt(wager, 10);
+		const otherScores = this.state.playerScores;
+
+		this.setState(() => {
+			return {
+				playerScores: {
+					...otherScores,
+					[playerKey]: newScore
+				},
+				isWagering: false
+			};
+		});
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -193,6 +227,9 @@ class App extends Component {
 				<PlayerList
 					players={this.state.players}
 					onAnswer={this.onAnswer}
+					onWager={this.onWager}
+					onStartWager={this.onStartWager}
+					isWagering={this.state.isWagering}
 					needName={this.state.addingPlayer}
 					createPlayer={this.onCreatePlayer}
 					playerScores={this.state.playerScores}

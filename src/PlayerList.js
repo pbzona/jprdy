@@ -12,6 +12,9 @@ const PlayerList = props => {
           index={idx}
           player={player}
           onAnswer={props.onAnswer}
+          onWager={props.onWager}
+          onStartWager={props.onStartWager}
+          isWagering={props.isWagering}
           needName={props.needName}
           createPlayer={props.createPlayer}
           score={props.playerScores[idx]}
@@ -25,6 +28,9 @@ const PlayerList = props => {
         player={player}
         onAnswer={props.onAnswer}
         score={props.playerScores[idx]}
+        onWager={props.onWager}
+        onStartWager={props.onStartWager}
+        isWagering={props.isWagering}
       />
     );
   });

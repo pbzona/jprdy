@@ -2,8 +2,9 @@ import React from 'react';
 import './styles/Player.css';
 
 import AddNewPlayer from './AddNewPlayer';
+import Wager from './Wager';
 
-const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
+const Player = ({ index, player, onAnswer, needName, createPlayer, score, onWager, onStartWager, isWagering }) => {
 	const fonts = [
 		'Rock Salt',
 		'Homemade Apple',
@@ -16,6 +17,12 @@ const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
 	if (needName) {
 		return (
 			 <AddNewPlayer createPlayer={createPlayer}/>
+		);
+	}
+
+	if (isWagering) {
+		return (
+			<Wager onWager={onWager}/>
 		);
 	}
 
@@ -46,7 +53,7 @@ const Player = ({ index, player, onAnswer, needName, createPlayer, score }) => {
 			<div>
 				<button
 					className="answer-button daily-double"
-					onClick={() => console.log("Daily Double")}
+					onClick={() => onStartWager()}
 				>
 					Daily Double
 				</button>
