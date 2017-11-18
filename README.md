@@ -4,6 +4,14 @@ I kick ass at Jeopardy, and I want the world to know about it (or at least the p
 
 There are plenty of React-based Jeopardy scoreboards out there. But none of them have the UI that I think they should. Hence, *Jprdy!* was born.
 
+## How to use it
+
+If you just want to play with the app, you can use it here:
+
+[JPRDY](jprdyscore.herokuapp.com)
+
+It's not finished yet! There are still a lot more features I want to add, and a few of them are listed below. Right now it works pretty well for the first two rounds, but Final Jeopardy isn't included. There is also very little error handling, so fair warning, certain inputs may cause interesting results.
+
 ## Concept
 
 The concept for *Jprdy!* is based on three requirements:
@@ -30,10 +38,13 @@ The third piece was the most fun to implement. For the header text, I used a fre
 
 The end result is a style that looks pretty close to the real thing, in my opinion.
 
+## Latest changes
+
+11/17/17 - Added the wager feature. This allows players to place wagers for Daily Doubles. It should not be too long before I'm able to turn this into a Final Jeopardy round.
+
 ## Still to-do
 
 - Implement Final Jeopardy round
-- Implement localStorage data persistence
 - Cleaner UX
 - Remove my little test buttons
 - Write tests
