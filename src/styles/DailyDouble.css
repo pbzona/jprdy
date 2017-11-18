@@ -1,0 +1,20 @@
+.daily-double {
+	background: #021275;
+	background-image: none;
+	color: #eee;
+	font-size: 1.6rem;
+	font-family: 'Spectral', serif;
+	font-weight: 500;
+	height: 3rem;
+	letter-spacing: 0;
+	margin-bottom: 2px;
+	text-transform: uppercase;
+	text-shadow: 2px 2px #000;
+	transition: all 0.6s ease;
+	width: 100%;
+}
+
+.daily-double:hover {
+	background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
+	color: #eee;
+}

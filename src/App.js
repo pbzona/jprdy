@@ -14,7 +14,7 @@ const initState = {
 	addingPlayer: false,
 	round: 1,
 	playerScores: [],
-	isWagering: false
+	isWagering: 0
 };
 
 class App extends Component {
@@ -186,10 +186,10 @@ class App extends Component {
 	}
 
 	// Starts a wager
-	onStartWager() {
+	onStartWager(player) {
 		this.setState(() => {
 			return {
-				isWagering: true
+				isWagering: player
 			}
 		});
 	}
@@ -198,20 +198,19 @@ class App extends Component {
 	onWager(playerKey, isCorrect) {
 		const wager = document.querySelector('.player-wager').value;
 
-		console.log(wager)
-
 		const newScore = isCorrect
 			? this.state.playerScores[playerKey] + parseInt(wager, 10)
 			: this.state.playerScores[playerKey] - parseInt(wager, 10);
 		const otherScores = this.state.playerScores;
+		const correctedPlayer = this.state.isWagering - 1;
 
 		this.setState(() => {
 			return {
 				playerScores: {
 					...otherScores,
-					[playerKey]: newScore
+					[correctedPlayer]: newScore
 				},
-				isWagering: false
+				isWagering: 0
 			};
 		});
 	}
@@ -233,6 +232,7 @@ class App extends Component {
 					needName={this.state.addingPlayer}
 					createPlayer={this.onCreatePlayer}
 					playerScores={this.state.playerScores}
+					round={this.state.round}
 				/>
 				<AddPlayer
 					onAddPlayer={this.onAddPlayer}
