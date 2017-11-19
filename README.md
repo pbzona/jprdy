@@ -8,7 +8,7 @@ There are plenty of React-based Jeopardy scoreboards out there. But none of them
 
 If you just want to play with the app, you can use it here:
 
-[JPRDY](jprdy.phizon.io)
+[JPRDY](https://jprdy.phizon.io)
 
 It's not finished yet! There are still a lot more features I want to add, and a few of them are listed below. Right now it works pretty well for the first two rounds, but Final Jeopardy isn't included. There is also very little error handling, so fair warning, certain inputs may cause interesting results.
 
