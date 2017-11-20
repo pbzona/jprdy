@@ -5,11 +5,12 @@
 .score-button {
 	background: #021275;
 	border: none;
+	border-radius: 0;
 	color: #F0B96C;
 	font-size: 2rem;
 	font-weight: 700;
-	margin: 1rem;
-	padding: .6rem;
+	margin: .4rem;
+	padding: .6rem .8rem;
 	text-shadow: 2px 2px #000;
 	width: 8rem;
 }

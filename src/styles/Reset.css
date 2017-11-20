@@ -5,11 +5,13 @@
 .reset-button {
 	background: #021275;
 	border: none;
+	border-radius: 0;
 	color: #fff;
 	font-family: 'Spectral', serif;
 	font-size: 1.2rem;
-	margin: 1rem;
-	padding: .6rem;
+	line-height: 2rem;
+	margin: .2rem;
+	padding: .6rem 1rem .4rem;
 	text-transform: uppercase;
 	text-shadow: 2px 2px #000;
 	width: auto;
