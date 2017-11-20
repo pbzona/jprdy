@@ -6,6 +6,7 @@ import ScoreButtonList from './ScoreButtonList';
 import PlayerList from './PlayerList';
 import AddPlayer from './AddPlayer';
 import RoundChange from './RoundChange';
+import Reset from './Reset';
 
 const initState = {
 	buttonValues: [200, 400, 600, 800, 1000],
@@ -253,7 +254,7 @@ class App extends Component {
 					shouldDisplay={this.state.round < 3}
 				/>
 
-				<button onClick={this.onReset}>Reset</button>
+				<Reset onReset={this.onReset} buttonText="Reset" />
 			</div>
 		);
 	}
