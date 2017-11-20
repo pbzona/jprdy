@@ -196,23 +196,31 @@ class App extends Component {
 
 	// Handles a wager, ie daily double
 	onWager(playerKey, isCorrect) {
-		const wager = document.querySelector('.player-wager').value;
+		let wager = parseInt(document.querySelector('.player-wager').value, 10);
 
-		const newScore = isCorrect
-			? this.state.playerScores[playerKey] + parseInt(wager, 10)
-			: this.state.playerScores[playerKey] - parseInt(wager, 10);
-		const otherScores = this.state.playerScores;
-		const correctedPlayer = this.state.isWagering - 1;
+		if (!wager) {
+			this.setState(() => {
+				return {
+					isWagering: 0
+				};
+			});
+		} else {
+			const newScore = isCorrect
+				? this.state.playerScores[playerKey] + wager
+				: this.state.playerScores[playerKey] - wager;
+			const otherScores = this.state.playerScores;
+			const correctedPlayer = this.state.isWagering - 1;
 
-		this.setState(() => {
-			return {
-				playerScores: {
-					...otherScores,
-					[correctedPlayer]: newScore
-				},
-				isWagering: 0
-			};
-		});
+			this.setState(() => {
+				return {
+					playerScores: {
+						...otherScores,
+						[correctedPlayer]: newScore
+					},
+					isWagering: 0
+				};
+			});
+		}
 	}
 
 	render() {
