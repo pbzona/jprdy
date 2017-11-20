@@ -4,9 +4,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import ScoreButtonList from './ScoreButtonList';
 import PlayerList from './PlayerList';
-import AddPlayer from './AddPlayer';
-import RoundChange from './RoundChange';
-import Reset from './Reset';
+import ActionList from './ActionList';
 
 const initState = {
 	buttonValues: [200, 400, 600, 800, 1000],
@@ -243,18 +241,15 @@ class App extends Component {
 					playerScores={this.state.playerScores}
 					round={this.state.round}
 				/>
-				<AddPlayer
+				<ActionList
 					onAddPlayer={this.onAddPlayer}
 					numPlayers={this.state.players.length}
-					shouldDisplay={!this.state.addingPlayer}
-				/>
-				<RoundChange
+					shouldAddPlayerDisplay={!this.state.addingPlayer}
 					round={this.state.round}
 					onRoundChange={this.onRoundChange}
-					shouldDisplay={this.state.round < 3}
+					shouldRoundChangeDisplay={this.state.round < 3}
+					onReset={this.onReset} 
 				/>
-
-				<Reset onReset={this.onReset} buttonText="Reset" />
 			</div>
 		);
 	}
