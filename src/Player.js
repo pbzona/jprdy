@@ -15,18 +15,18 @@ const Player = props => {
 
   let activeFont = 0;
 
+  const displayScore =
+    props.score >= 0
+      ? `$${require("numeral")(props.score).format("0,0")}`
+      : `-$${require("numeral")(props.score * -1).format("0,0")}`;
+
   if (props.needName) {
     return <AddNewPlayer createPlayer={props.createPlayer} />;
   }
 
   if (props.index + 1 === props.isWagering) {
-    return <Wager onWager={props.onWager} index={props.index} />;
+    return <Wager onWager={props.onWager} index={props.index} score={displayScore} />;
   }
-
-  const displayScore =
-    props.score >= 0
-      ? `$${require("numeral")(props.score).format("0,0")}`
-      : `-$${require("numeral")(props.score * -1).format("0,0")}`;
 
   return (
     <div className="player-container">

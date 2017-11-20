@@ -1,5 +1,17 @@
+.wager-container {
+	align-items: center;
+	background-color: #021275;
+	clear: both;
+	display: flex;
+	height: 12rem;
+	justify-content: center;
+	margin-bottom: 2px;
+}
+
 .player-wager {
+	border: 0;
 	font-size: 2.4rem;
-	margin: 20% 0 1rem;
+	margin: 1rem 0;
+	padding: .4rem;
 	width: 80%;
 }

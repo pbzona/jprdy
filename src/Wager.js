@@ -1,9 +1,16 @@
 import React from 'react';
 import './styles/Wager.css';
 
-const Wager = ({ index, onWager }) => (
+const Wager = ({ index, onWager, score }) => (
   <div className="player-container">
-    <input className="player-wager" placeholder="Wager" />
+    <div className="display-player-score">
+      <h2 id={`score-${index}`} className="score">
+        {score}
+      </h2>
+    </div>
+    <div className="wager-container">
+      <input className="player-wager" placeholder="Wager" />
+    </div>
     <div>
       <button
         className="answer-button right"
