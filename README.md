@@ -42,6 +42,8 @@ The end result is a style that looks pretty close to the real thing, in my opini
 
 11/17/17 - Added the wager feature. This allows players to place wagers for Daily Doubles. It should not be too long before I'm able to turn this into a Final Jeopardy round.
 
+11/20/17 - Made some changes to the wager UI, and fixed the ugliness of the buttons at the bottom. Also a random bugfix. Decided to start using a not-quite-defined release tagging system.
+
 ## Still to-do
 
 - Implement Final Jeopardy round
