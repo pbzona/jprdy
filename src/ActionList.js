@@ -16,7 +16,7 @@ const ActionList = props => {
 
 			<RoundChange
 				round={props.round}
-				onRoundChange={this.onRoundChange}
+				onRoundChange={props.onRoundChange}
 				shouldDisplay={props.shouldRoundChangeDisplay}
 			/>
 
