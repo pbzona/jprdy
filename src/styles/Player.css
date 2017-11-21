@@ -1,5 +1,6 @@
 .player-container {
 	display: inline;
+	height: auto;
 	margin: 1rem;
 	overflow: auto;
 	text-align: center;

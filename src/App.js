@@ -13,7 +13,11 @@ const initState = {
 	addingPlayer: false,
 	round: 1,
 	playerScores: [],
-	isWagering: 0
+	isWagering: 0,
+	final: {
+		wagers: {},
+		answers: {}
+	}
 };
 
 class App extends Component {
@@ -31,6 +35,8 @@ class App extends Component {
 		this.onCreatePlayer = this.onCreatePlayer.bind(this);
 		this.onWager = this.onWager.bind(this);
 		this.onStartWager = this.onStartWager.bind(this);
+		this.onFinalWager = this.onFinalWager.bind(this);
+		this.onFinalAnswer = this.onFinalAnswer.bind(this);
 	}
 
 	// Load from localStorage if present
@@ -87,7 +93,6 @@ class App extends Component {
 
 	// Intermediate state when adding a new player
 	onAddPlayer(newPlayer) {
-		// this will take a player object with name and score props
 		this.setState(() => {
 			return {
 				players: this.state.players.concat(newPlayer),
@@ -189,7 +194,7 @@ class App extends Component {
 		this.setState(() => {
 			return {
 				isWagering: player
-			}
+			};
 		});
 	}
 
@@ -222,6 +227,99 @@ class App extends Component {
 		}
 	}
 
+	// Store wager data for Final Jeopardy
+	onFinalWager(playerKey) {
+		const wager = parseInt(
+			document.querySelector(`.final-wager-${playerKey}`).value,
+			10
+		);
+		const otherWagers = this.state.final.wagers;
+		let isFinalWager;
+		if (this.state.players.length === 1) {
+			isFinalWager = true;
+		} else {
+			isFinalWager = otherWagers
+				? Object.keys(otherWagers).length === this.state.players.length - 1
+				: false;
+		}
+
+		if (isFinalWager) {
+			this.setState(() => {
+				return {
+					final: {
+						wagers: {
+							...otherWagers,
+							[playerKey]: wager
+						}
+					},
+					round: 4
+				};
+			});
+		} else {
+			this.setState(() => {
+				return {
+					final: {
+						wagers: {
+							...otherWagers,
+							[playerKey]: wager
+						}
+					}
+				};
+			});
+		}
+
+		document.querySelector(`.final-wager-${playerKey}`).value = '';
+	}
+
+	// Lock in your final answers after placing wagers
+	onFinalAnswer(playerKey) {
+		const answer = document
+			.querySelector(`.final-answer-${playerKey}`)
+			.value.trim();
+		const otherAnswers = this.state.final.answers;
+		let isFinalAnswer;
+		if (this.state.players.length === 1) {
+			isFinalAnswer = true;
+		} else {
+			isFinalAnswer = otherAnswers
+				? Object.keys(otherAnswers).length === this.state.players.length - 1
+				: false;
+		}
+
+		if (isFinalAnswer) {
+			this.setState(() => {
+				return {
+					final: {
+						wagers: {
+							...this.state.final.wagers
+						},
+						answers: {
+							...otherAnswers,
+							[playerKey]: answer
+						}
+					},
+					round: 5
+				};
+			});
+		} else {
+			this.setState(() => {
+				return {
+					final: {
+						wagers: {
+							...this.state.final.wagers
+						},
+						answers: {
+							...otherAnswers,
+							[playerKey]: answer
+						}
+					}
+				};
+			});
+		}
+
+		document.querySelector(`.final-answer-${playerKey}`).value = '';
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -240,6 +338,8 @@ class App extends Component {
 					createPlayer={this.onCreatePlayer}
 					playerScores={this.state.playerScores}
 					round={this.state.round}
+					onFinalWager={this.onFinalWager}
+					onFinalAnswer={this.onFinalAnswer}
 				/>
 				<ActionList
 					onAddPlayer={this.onAddPlayer}
@@ -248,7 +348,7 @@ class App extends Component {
 					round={this.state.round}
 					onRoundChange={this.onRoundChange}
 					shouldRoundChangeDisplay={this.state.round < 3}
-					onReset={this.onReset} 
+					onReset={this.onReset}
 				/>
 			</div>
 		);
