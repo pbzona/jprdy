@@ -20,6 +20,7 @@ const PlayerList = props => {
 					round={props.round}
 					onFinalWager={props.onFinalWager}
 					onFinalAnswer={props.onFinalAnswer}
+					finalData={props.finalData}
 				/>
 			);
 		} else if (idx === props.players.length - 1) {
@@ -38,6 +39,7 @@ const PlayerList = props => {
 					round={props.round}
 					onFinalWager={props.onFinalWager}
 					onFinalAnswer={props.onFinalAnswer}
+					finalData={props.finalData}
 				/>
 			);
 		}
@@ -54,6 +56,7 @@ const PlayerList = props => {
 				round={props.round}
 				onFinalWager={props.onFinalWager}
 				onFinalAnswer={props.onFinalAnswer}
+				finalData={props.finalData}
 			/>
 		);
 	});

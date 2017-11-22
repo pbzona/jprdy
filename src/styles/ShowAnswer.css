@@ -1,0 +1,19 @@
+.show-answer-container {
+	align-items: center;
+	background: #021275;
+	display: flex;
+	height: 3rem;
+	margin: 0;
+	width: 100%;
+}
+
+.show-answer {
+	border: none;
+	border-radius: 0;
+	color: #fff;
+	font-family: 'Spectral', serif;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	text-transform: uppercase;
+	width: 100%;
+}

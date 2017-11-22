@@ -340,6 +340,7 @@ class App extends Component {
 					round={this.state.round}
 					onFinalWager={this.onFinalWager}
 					onFinalAnswer={this.onFinalAnswer}
+					finalData={this.state.final}
 				/>
 				<ActionList
 					onAddPlayer={this.onAddPlayer}

@@ -6,6 +6,7 @@ import DailyDouble from './DailyDouble';
 import Wager from './Wager';
 import FinalWager from './FinalWager';
 import FinalAnswer from './FinalAnswer';
+import ShowAnswer from './ShowAnswer';
 
 const Player = props => {
 	const fonts = [
@@ -74,6 +75,10 @@ const Player = props => {
 
 			{props.round < 3 && (
 				<DailyDouble onStartWager={props.onStartWager} index={props.index} />
+			)}
+
+			{props.round === 5 && (
+				<ShowAnswer answer={props.finalData.answers[props.index]} index={props.index} />
 			)}
 
 			<div>

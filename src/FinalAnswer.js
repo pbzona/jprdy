@@ -11,7 +11,7 @@ const FinalAnswer = props => (
 		<div className="final-answer-container">
 			<input
 				className={`final-answer final-answer-${props.index}`}
-				placeholder="Answer"
+				placeholder="What is..."
 			/>
 		</div>
 		<div className="final-button-container">
