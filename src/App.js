@@ -37,6 +37,7 @@ class App extends Component {
 		this.onStartWager = this.onStartWager.bind(this);
 		this.onFinalWager = this.onFinalWager.bind(this);
 		this.onFinalAnswer = this.onFinalAnswer.bind(this);
+		this.onFinalAnswerCheck = this.onFinalAnswerCheck.bind(this);
 	}
 
 	// Load from localStorage if present
@@ -320,6 +321,24 @@ class App extends Component {
 		document.querySelector(`.final-answer-${playerKey}`).value = '';
 	}
 
+	//Checks to see if Final Jeopardy answer was correct
+	onFinalAnswerCheck(playerKey, isCorrect) {
+		const playerWager = this.state.final.wagers[playerKey];
+		const newScore = isCorrect
+			? this.state.playerScores[playerKey] + playerWager
+			: this.state.playerScores[playerKey] - playerWager;
+		const otherScores = this.state.playerScores;
+
+		this.setState(() => {
+			return {
+				playerScores: {
+					...otherScores,
+					[playerKey]: newScore
+				}
+			};
+		});
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -340,6 +359,7 @@ class App extends Component {
 					round={this.state.round}
 					onFinalWager={this.onFinalWager}
 					onFinalAnswer={this.onFinalAnswer}
+					onFinalAnswerCheck={this.onFinalAnswerCheck}
 					finalData={this.state.final}
 				/>
 				<ActionList

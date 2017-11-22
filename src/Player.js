@@ -83,6 +83,10 @@ const Player = props => {
 				<DailyDouble onStartWager={props.onStartWager} index={props.index} />
 			)}
 
+			{props.round < 5 && (
+				<RightAndWrong index={props.index} onFunction={props.onAnswer} />
+			)}
+
 			{props.round === 5 && (
 				<ShowAnswer
 					answer={props.finalData.answers[props.index]}
@@ -90,9 +94,10 @@ const Player = props => {
 				/>
 			)}
 
-			{props.round < 5 && (
-				<RightAndWrong index={props.index} onFunction={props.onAnswer} />
+			{props.round === 5 && (
+				<RightAndWrong index={props.index} onFunction={props.onFinalAnswerCheck} />
 			)}
+
 		</div>
 	);
 };
