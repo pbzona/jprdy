@@ -7,6 +7,7 @@ import Wager from './Wager';
 import FinalWager from './FinalWager';
 import FinalAnswer from './FinalAnswer';
 import ShowAnswer from './ShowAnswer';
+import RightAndWrong from './RightAndWrong';
 
 const Player = props => {
 	const fonts = [
@@ -29,7 +30,12 @@ const Player = props => {
 
 	if (props.index + 1 === props.isWagering) {
 		return (
-			<Wager onWager={props.onWager} index={props.index} score={displayScore} />
+			<Wager
+				onWager={props.onWager}
+				index={props.index}
+				score={displayScore}
+				onAnswer={props.onAnswer}
+			/>
 		);
 	}
 
@@ -78,23 +84,15 @@ const Player = props => {
 			)}
 
 			{props.round === 5 && (
-				<ShowAnswer answer={props.finalData.answers[props.index]} index={props.index} />
+				<ShowAnswer
+					answer={props.finalData.answers[props.index]}
+					index={props.index}
+				/>
 			)}
 
-			<div>
-				<button
-					className="answer-button right"
-					onClick={() => props.onAnswer(props.index, true)}
-				>
-					&#x2713;
-				</button>
-				<button
-					className="answer-button wrong"
-					onClick={() => props.onAnswer(props.index, false)}
-				>
-					&#x2717;
-				</button>
-			</div>
+			{props.round < 5 && (
+				<RightAndWrong index={props.index} onFunction={props.onAnswer} />
+			)}
 		</div>
 	);
 };
