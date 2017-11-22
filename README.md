@@ -4,13 +4,51 @@ I kick ass at Jeopardy, and I want the world to know about it (or at least the p
 
 There are plenty of React-based Jeopardy scoreboards out there. But none of them have the UI that I think they should. Hence, *Jprdy!* was born.
 
+![Jprdy](./jprdy-screenshot.png?raw=true "Jprdy")
+
 ## How to use it
 
 If you just want to play with the app, you can use it here:
 
 [JPRDY](https://jprdy.phizon.io)
 
-It's not finished yet! There are still a lot more features I want to add, and a few of them are listed below. Right now it works pretty well for the first two rounds, but Final Jeopardy isn't included. There is also very little error handling, so fair warning, certain inputs may cause interesting results.
+As of right now, you can play a full game of Jeopardy, all the way through to the final round. 
+
+### The First Round
+
+To begin, click the **Add New Player** button at the bottom of the page and add the names of whoever you're playing with.
+
+When the game starts, select an "active score" from the list of dollar values at the top of the page. For example, if Alex asks a question worth $200, you'll click the $200 button.
+
+When someone answers the question, click either the checkmark or the X button under their name, to indicate correct or incorrect, respectively. The active value will then be applied to the player's score.
+
+When someone gets a Daily Double, click the **Daily Double** button under their name. You can enter a wager, then click the correct or incorrect button to apply that wager to their score.
+
+### Double Jeopardy
+
+To advance to the next round, click the **Double Jeopardy** button at the bottom of the page. This doubles the value of the questions asked. Wagering for Daily Doubles works the same way.
+
+### Final Jeopardy
+
+To advance to the final round, click, you guessed it, the **Final Jeopardy** button at the bottom of the page.
+
+In this round, each player must first enter a wager. You can do this during the commercial after hearing the category on TV. Once it comes back, each player should enter an answer to the question, then pass the computer/device to the next person to enter their answer (answers will be hidden once entered).
+
+After everyone has answered the question, the right and wrong buttons will be displayed below each player's answer (so no one can lie...). For each player, click either the check or the X, and their wager will be added or subtracted from their score.
+
+To figure who won, check the final scores!
+
+### Notes
+
+*Jprdy!* is not finished yet! There are still a lot more features I want to add, and a few of them are listed below. This is a minimal product so far, and it works to the extent that it's designed to work. I don't have a lot of checks in place to prevent things from breaking if you click the wrong things.
+
+If you notice something specific and would like to document it to be fixed in an upcoming release, please open an issue. I'll be working through a lot of these myself but it's definitely possible I'll miss things.
+
+### House Rules
+
+Since you're playing along at home, different rules may apply in terms of what counts as a correct answer, who gets Daily Doubles, etc. 
+
+You can apply whatever house rules you want, and if you have a specific feature that isn't supported by the app, feel free to open an issue. I'd like to expand this section in the future, since I'm sure different people play in different ways at home.
 
 ## Concept
 
@@ -44,11 +82,14 @@ The end result is a style that looks pretty close to the real thing, in my opini
 
 11/20/17 - Made some changes to the wager UI, and fixed the ugliness of the buttons at the bottom. Also a random bugfix. Decided to start using a not-quite-defined release tagging system.
 
+11/22/17 - Final Jeopardy is done (finally). You can now play a full game of Jeopardy, although more user features are still to come.
+
 ## Still to-do
 
-- Implement Final Jeopardy round
 - Cleaner UX
-- Remove my little test buttons
+- Error handling
 - Write tests
+- Mobile friendliness (currently Jprdy looks best on a full size screen)
+- Refactor into something readable - eject to use SCSS, better component design, etc.
 
 This is an incomplete app that is being actively worked on. This active work is haphazard at times, and certain implementations have been hacked together to create a working prototype. It's also my first "real" React project. I don't want to apologize for my code, but know that I am aware of the issues.

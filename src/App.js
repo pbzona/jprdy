@@ -180,7 +180,7 @@ class App extends Component {
 		});
 	}
 
-	// Handle colors for positive and negative scores
+	// Handle colors for positive (white) and negative (red) scores
 	handleScores() {
 		const playerScores = document.querySelectorAll('.score');
 
