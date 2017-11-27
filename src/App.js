@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Header from './Header';
-import ScoreButtonList from './ScoreButtonList';
-import PlayerList from './PlayerList';
-import ActionList from './ActionList';
+import Header from './components/Header';
+import ScoreButtonList from './components/ScoreButtonList';
+import PlayerList from './components/PlayerList';
+import ActionList from './components/ActionList';
 
 const initState = {
 	buttonValues: [200, 400, 600, 800, 1000],
