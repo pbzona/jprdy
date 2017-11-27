@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/Wager.css';
 
 import RightAndWrong from './RightAndWrong';
 

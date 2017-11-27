@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/AddPlayerButton.css';
 
 const AddPlayerButton = props => {
 	if (props.shouldDisplay) {

@@ -78,11 +78,11 @@ The end result is a style that looks pretty close to the real thing, in my opini
 
 ## Latest changes
 
-11/17/17 - Added the wager feature. This allows players to place wagers for Daily Doubles. It should not be too long before I'm able to turn this into a Final Jeopardy round.
-
 11/20/17 - Made some changes to the wager UI, and fixed the ugliness of the buttons at the bottom. Also a random bugfix. Decided to start using a not-quite-defined release tagging system.
 
 11/22/17 - Final Jeopardy is done (finally). You can now play a full game of Jeopardy, although more user features are still to come.
+
+11/27/17 - Styling is now done in SCSS. No major changes to overall project design structure yet, but this will make those changes much, much easier.
 
 ## Still to-do
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/ScoreButton.css';
 
 const ScoreButton = ({ onSelectValue, value, buttonKey }) => {
 	return (

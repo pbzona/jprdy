@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/Reset.css';
 
 const Reset = props => {
 	return (

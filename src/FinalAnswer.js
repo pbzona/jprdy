@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/FinalAnswer.css';
 
 const FinalAnswer = props => (
 	<div className="player-container">

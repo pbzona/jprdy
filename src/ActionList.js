@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/ActionList.css';
 
 import AddPlayer from './AddPlayer';
 import RoundChange from './RoundChange';

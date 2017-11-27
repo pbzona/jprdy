@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/ShowAnswer.css';
 
 const ShowAnswer = props => {
 	return (

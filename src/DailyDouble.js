@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/DailyDouble.css';
 
 const DailyDouble = props => (
   <div>

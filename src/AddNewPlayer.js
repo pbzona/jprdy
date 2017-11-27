@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/AddNewPlayer.css';
 
 const AddNewPlayer = ({createPlayer}) => {
 	return (

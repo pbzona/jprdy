@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/Player.css';
 
 import AddNewPlayer from './AddNewPlayer';
 import DailyDouble from './DailyDouble';

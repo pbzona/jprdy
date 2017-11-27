@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/PlayerList.css';
 
 import Player from './Player';
 

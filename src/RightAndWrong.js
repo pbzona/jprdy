@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/RightAndWrong.css';
 
 const RightAndWrong = props => {
 	return (

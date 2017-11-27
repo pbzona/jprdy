@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/RoundChange.css';
 
 const RoundChange = props => {
   if (props.shouldDisplay) {

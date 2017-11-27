@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/AddPlayer.css';
 
 import AddPlayerButton from './AddPlayerButton';
 

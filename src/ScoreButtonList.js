@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/ScoreButtonList.css';
 
 import ScoreButton from './ScoreButton';
 

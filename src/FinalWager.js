@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/FinalWager.css';
 
 const FinalWager = props => (
 	<div className="player-container">
