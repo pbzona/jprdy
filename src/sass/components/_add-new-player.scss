@@ -13,10 +13,10 @@
 }
 
 .add-player-submit {
-	background: #021275;
+	background: $jprdy-blue;
 	border: none;
 	border-radius: 0;
-	color: #fff;
+	color: $white;
 	font-family: 'Spectral', serif;
 	font-size: 1.2rem;
 	margin: 0.4rem;
@@ -24,9 +24,9 @@
 	text-transform: uppercase;
 	text-shadow: 2px 2px #000;
 	width: 80%;
-}
 
-.add-player-submit:hover {
-	color: #f0b96c;
-	cursor: pointer;
+	&:hover {
+		color: $jprdy-yellow;
+		cursor: pointer;
+	}
 }

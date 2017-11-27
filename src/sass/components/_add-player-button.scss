@@ -1,8 +1,8 @@
 .add-player-button {
-	background: #021275;
-	border: 2px solid #ddd;
+	background: $jprdy-blue;
+	border: 2px solid $background-gray;
 	border-radius: 0;
-	color: #fff;
+	color: $white;
 	font-family: 'Spectral', serif;
 	font-size: 1.2rem;
 	line-height: 2rem;
@@ -10,9 +10,9 @@
 	text-transform: uppercase;
 	text-shadow: 2px 2px #000;
 	width: 100%;
-}
 
-.add-player-button:hover {
-	color: #F0B96C;
-	cursor: pointer;
+	&:hover {
+		color: $jprdy-yellow;
+		cursor: pointer;
+	}
 }

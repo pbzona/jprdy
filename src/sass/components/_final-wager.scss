@@ -1,6 +1,6 @@
 .final-wager-container {
 	align-items: center;
-	background-color: #021275;
+	background-color: $jprdy-blue;
 	clear: both;
 	display: flex;
 	height: 12rem;
@@ -17,18 +17,17 @@
 }
 
 .final-button {
-	background: #021275;
+	background: $jprdy-blue;
 	border: none;
 	border-radius: 0;
-	color: #fff;
+	color: $white;
 	font-family: 'Spectral', serif;
 	font-size: 1.4rem;
 	height: 3rem;
 	text-transform: uppercase;
 	width: 100%;
-}
 
-.final-button:hover {
-	background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-	cursor: pointer;
+	&:hover {
+		@include highlight-bg();
+	}
 }

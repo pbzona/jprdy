@@ -4,7 +4,7 @@
 }
 
 .reset-button {
-	background: #021275;
+	background: $jprdy-blue;
 	border: 2px solid #ddd;
 	border-radius: 0;
 	color: #fff;
@@ -14,10 +14,10 @@
 	padding: .6rem 1rem .4rem;
 	text-transform: uppercase;
 	text-shadow: 2px 2px #000;
-	width: 100%
-}
+	width: 100%;
 
-.reset-button:hover {
-	color: #F0B96C;
-	cursor: pointer;
+	&:hover {
+		color: $jprdy-yellow;
+		ursor: pointer;
+	}
 }

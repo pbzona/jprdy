@@ -5,13 +5,6 @@ body {
   font-family: sans-serif;
   font-size: 62.5%; }
 
-/*
-.color-primary-0 { color: #0473A2 }
-.color-primary-1 { color: #3A9BC5 }
-.color-primary-2 { color: #118DC3 }
-.color-primary-3 { color: #035B81 }
-.color-primary-4 { color: #024664 }
-*/
 .action-list {
   margin: .4rem auto;
   text-align: center;
@@ -41,10 +34,9 @@ body {
   text-transform: uppercase;
   text-shadow: 2px 2px #000;
   width: 80%; }
-
-.add-player-submit:hover {
-  color: #f0b96c;
-  cursor: pointer; }
+  .add-player-submit:hover {
+    color: #f0b96c;
+    cursor: pointer; }
 
 .add-player-container {
   text-align: center;
@@ -62,14 +54,14 @@ body {
   text-transform: uppercase;
   text-shadow: 2px 2px #000;
   width: 100%; }
-
-.add-player-button:hover {
-  color: #F0B96C;
-  cursor: pointer; }
+  .add-player-button:hover {
+    color: #f0b96c;
+    cursor: pointer; }
 
 .daily-double {
   background: #021275;
   background-image: none;
+  border-radius: 0;
   color: #eee;
   font-size: 1.6rem;
   font-family: 'Spectral', serif;
@@ -81,10 +73,9 @@ body {
   text-shadow: 2px 2px #000;
   transition: all 0.6s ease;
   width: 100%; }
-
-.daily-double:hover {
-  background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-  color: #eee; }
+  .daily-double:hover {
+    background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
+    cursor: pointer; }
 
 .final-answer-container {
   align-items: center;
@@ -112,10 +103,9 @@ body {
   height: 3rem;
   text-transform: uppercase;
   width: 100%; }
-
-.final-button:hover {
-  background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-  cursor: pointer; }
+  .final-button:hover {
+    background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
+    cursor: pointer; }
 
 .final-wager-container {
   align-items: center;
@@ -143,10 +133,9 @@ body {
   height: 3rem;
   text-transform: uppercase;
   width: 100%; }
-
-.final-button:hover {
-  background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-  cursor: pointer; }
+  .final-button:hover {
+    background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
+    cursor: pointer; }
 
 @font-face {
   font-family: 'Gyparody';
@@ -182,10 +171,9 @@ body {
   text-align: center;
   width: 100%;
   margin-bottom: 0.1rem; }
-
-.display-player-score h2 {
-  font-size: 2rem;
-  text-shadow: 2px 2px #000; }
+  .display-player-score h2 {
+    font-size: 2rem;
+    text-shadow: 2px 2px #000; }
 
 .display-player-name {
   background-color: #021275;
@@ -195,13 +183,11 @@ body {
   height: 9rem;
   margin-bottom: 2px;
   width: 100%; }
-
-.display-player-name h2 {
-  font-size: 3.6rem;
-  line-height: 1.6rem; }
-
-.display-player-name h2:hover {
-  cursor: pointer; }
+  .display-player-name h2 {
+    font-size: 3.6rem;
+    line-height: 1.6rem; }
+    .display-player-name h2:hover {
+      cursor: pointer; }
 
 .player-list {
   display: flex;
@@ -227,10 +213,9 @@ body {
   text-transform: uppercase;
   text-shadow: 2px 2px #000;
   width: 100%; }
-
-.reset-button:hover {
-  color: #F0B96C;
-  cursor: pointer; }
+  .reset-button:hover {
+    color: #f0b96c;
+    ursor: pointer; }
 
 .right-wrong-button {
   background: #eee;
@@ -239,29 +224,24 @@ body {
   font-size: 2rem;
   height: 3rem;
   width: 50%; }
-
-.right-wrong-button:active,
-.right-wrong-button:focus {
-  outline: none; }
-
-.right-wrong-button:hover {
-  cursor: pointer; }
+  .right-wrong-button:hover {
+    cursor: pointer; }
+  .right-wrong-button:active, .right-wrong-button:focus {
+    outline: none; }
 
 .right {
   color: #579532;
   transition: all 0.4s ease; }
-
-.right:hover {
-  background: #579532;
-  color: #eee; }
+  .right:hover {
+    background: #579532;
+    color: #eee; }
 
 .wrong {
   color: #aa3939;
   transition: all 0.4s ease; }
-
-.wrong:hover {
-  background: #aa3939;
-  color: #eee; }
+  .wrong:hover {
+    background: #aa3939;
+    color: #eee; }
 
 .round-change-container {
   text-align: center;
@@ -279,10 +259,9 @@ body {
   text-transform: uppercase;
   text-shadow: 2px 2px #000;
   width: 100%; }
-
-.round-change-button:hover {
-  color: #f0b96c;
-  cursor: pointer; }
+  .round-change-button:hover {
+    color: #f0b96c;
+    cursor: pointer; }
 
 .score-button-container {
   display: inline-flex; }
@@ -291,20 +270,20 @@ body {
   background: #021275;
   border: none;
   border-radius: 0;
-  color: #F0B96C;
+  color: #f0b96c;
   font-size: 2rem;
   font-weight: 700;
   margin: .4rem;
   padding: .6rem .8rem;
   text-shadow: 2px 2px #000;
   width: 8rem; }
-
-.score-button:hover {
-  background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
-  cursor: pointer; }
+  .score-button:hover {
+    background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
+    cursor: pointer; }
 
 .activeButton {
-  background-image: linear-gradient(to bottom, #8C0233, #3E01A3); }
+  background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
+  cursor: pointer; }
 
 .score-button-list-container {
   margin: 1rem auto;

@@ -1,0 +1,4 @@
+@mixin highlight-bg() {
+	background-image: linear-gradient(to bottom, $highlight-pink, $highlight-purple);
+	cursor: pointer;
+}

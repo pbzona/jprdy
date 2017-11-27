@@ -3,23 +3,22 @@
 }
 
 .score-button {
-	background: #021275;
+	background: $jprdy-blue;
 	border: none;
 	border-radius: 0;
-	color: #F0B96C;
+	color: $jprdy-yellow;
 	font-size: 2rem;
 	font-weight: 700;
 	margin: .4rem;
 	padding: .6rem .8rem;
 	text-shadow: 2px 2px #000;
 	width: 8rem;
-}
 
-.score-button:hover {
-	background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
-	cursor: pointer;
+	&:hover {
+		@include highlight-bg();
+	}
 }
 
 .activeButton {
-	background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
+	@include highlight-bg();
 }

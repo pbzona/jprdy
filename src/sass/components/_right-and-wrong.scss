@@ -5,33 +5,32 @@
 	font-size: 2rem;
 	height: 3rem;
 	width: 50%;
-}
 
-.right-wrong-button:active,
-.right-wrong-button:focus {
-	outline: none;
-}
+	&:hover {
+		cursor: pointer;
+	}
 
-.right-wrong-button:hover {
-	cursor: pointer;
+	&:active, &:focus {
+		outline: none;
+	}
 }
 
 .right {
 	color: #579532;
 	transition: all 0.4s ease;
-}
 
-.right:hover {
-	background: #579532;
-	color: #eee;
+	&:hover {
+		background: #579532;
+		color: #eee;
+	}
 }
 
 .wrong {
 	color: #aa3939;
 	transition: all 0.4s ease;
-}
 
-.wrong:hover {
-	background: #aa3939;
-	color: #eee;
+	&:hover {
+		background: #aa3939;
+		color: #eee;
+	}
 }
