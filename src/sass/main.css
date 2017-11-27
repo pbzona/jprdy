@@ -38,26 +38,6 @@ body {
     color: #f0b96c;
     cursor: pointer; }
 
-.add-player-container {
-  text-align: center;
-  width: 100%; }
-
-.add-player-button {
-  background: #021275;
-  border: 2px solid #ddd;
-  border-radius: 0;
-  color: #fff;
-  font-family: 'Spectral', serif;
-  font-size: 1.2rem;
-  line-height: 2rem;
-  padding: .6rem 1rem .4rem;
-  text-transform: uppercase;
-  text-shadow: 2px 2px #000;
-  width: 100%; }
-  .add-player-button:hover {
-    color: #f0b96c;
-    cursor: pointer; }
-
 .daily-double {
   background: #021275;
   background-image: none;
@@ -197,26 +177,6 @@ body {
   overflow: auto;
   width: 80%; }
 
-.reset-container {
-  text-align: center;
-  width: 100%; }
-
-.reset-button {
-  background: #021275;
-  border: 2px solid #ddd;
-  border-radius: 0;
-  color: #fff;
-  font-family: 'Spectral', serif;
-  font-size: 1.2rem;
-  line-height: 2rem;
-  padding: .6rem 1rem .4rem;
-  text-transform: uppercase;
-  text-shadow: 2px 2px #000;
-  width: 100%; }
-  .reset-button:hover {
-    color: #f0b96c;
-    ursor: pointer; }
-
 .right-wrong-button {
   background: #eee;
   border: none;
@@ -242,26 +202,6 @@ body {
   .wrong:hover {
     background: #aa3939;
     color: #eee; }
-
-.round-change-container {
-  text-align: center;
-  width: 100%; }
-
-.round-change-button {
-  background: #021275;
-  border: 2px solid #ddd;
-  border-radius: 0;
-  color: #fff;
-  font-family: 'Spectral', serif;
-  font-size: 1.2rem;
-  line-height: 2rem;
-  padding: .6rem 1rem .4rem;
-  text-transform: uppercase;
-  text-shadow: 2px 2px #000;
-  width: 100%; }
-  .round-change-button:hover {
-    color: #f0b96c;
-    cursor: pointer; }
 
 .score-button-container {
   display: inline-flex; }
@@ -323,3 +263,21 @@ body {
   margin: 1rem 0;
   padding: .4rem;
   width: 80%; }
+
+.button {
+  border-radius: 0; }
+
+.button--action {
+  background: #021275;
+  border: 2px solid #ddd;
+  color: #fff;
+  font-family: 'Spectral', serif;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  padding: .6rem 1rem .4rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #000;
+  width: 100%; }
+  .button--action:hover {
+    color: #f0b96c;
+    cursor: pointer; }

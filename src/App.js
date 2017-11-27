@@ -120,11 +120,11 @@ class App extends Component {
 
 	// Handle round changes
 	onRoundChange() {
-		const newValues = this.state.buttonValues.map(value => {
-			return value * 2;
-		});
-
 		if (this.state.round === 1) {
+			const newValues = this.state.buttonValues.map(value => {
+				return value * 2;
+			});
+			
 			this.setState(() => {
 				return {
 					buttonValues: newValues,

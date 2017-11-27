@@ -1,13 +1,11 @@
-.reset-container {
-	text-align: center;
-	width: 100%;
+.button {
+	border-radius: 0;
 }
 
-.reset-button {
+.button--action {
 	background: $jprdy-blue;
-	border: 2px solid #ddd;
-	border-radius: 0;
-	color: #fff;
+	border: 2px solid $background-gray;
+	color: $white;
 	font-family: 'Spectral', serif;
 	font-size: 1.2rem;
 	line-height: 2rem;
@@ -18,6 +16,6 @@
 
 	&:hover {
 		color: $jprdy-yellow;
-		ursor: pointer;
+		cursor: pointer;
 	}
 }

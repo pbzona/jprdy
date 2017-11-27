@@ -1,25 +1,25 @@
 import React from 'react';
 
-import AddPlayer from './AddPlayer';
-import RoundChange from './RoundChange';
-import Reset from './Reset';
+import ActionButton from './ActionButton';
 
 const ActionList = props => {
 	return (
 		<div className="action-list">
-			<AddPlayer
-				onAddPlayer={props.onAddPlayer}
-				numPlayers={props.numPlayers}
-				shouldDisplay={props.shouldAddPlayerDisplay}
-			/>
+			{(props.shouldAddPlayerDisplay && props.numPlayers < 4) && 
+				<ActionButton
+					buttonFunction={props.onAddPlayer}
+					buttonText="Add New Player"
+				/>
+			}
 
-			<RoundChange
-				round={props.round}
-				onRoundChange={props.onRoundChange}
-				shouldDisplay={props.shouldRoundChangeDisplay}
-			/>
+			{props.shouldRoundChangeDisplay && 
+				<ActionButton
+					buttonFunction={props.onRoundChange}
+					buttonText={props.round < 2 ? 'Double Jeopardy' : 'Final Jeopardy'}
+				/>
+			}
 
-			<Reset onReset={props.onReset} buttonText="Reset" />
+			<ActionButton buttonFunction={props.onReset} buttonText="New Game" />
 		</div>
 	);
 };
