@@ -1,8 +1,9 @@
 .player-list {
 	display: flex;
 	flex-direction: row;
+	height: auto;
 	margin: 1rem auto;
 	justify-content: space-around;
 	overflow: auto;
-	width: 80%;
+	width: auto;
 }

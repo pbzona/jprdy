@@ -9,9 +9,21 @@
 }
 
 .player-wager {
+	background: $jprdy-blue;
 	border: 0;
+	border-bottom: 2px solid $white;
+	color: $white;
 	font-size: 2.4rem;
 	margin: 1rem 0;
 	padding: .4rem;
 	width: 80%;
+
+	&::placeholder {
+		color: $light-gray;
+	}
+
+	&:active, 
+	&:focus {
+		outline: none;
+	}
 }

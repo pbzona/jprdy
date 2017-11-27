@@ -7,18 +7,17 @@
 	border: none;
 	border-radius: 0;
 	color: $jprdy-yellow;
-	font-size: 2rem;
+	font-size: 3.2rem;
 	font-weight: 700;
-	margin: .4rem;
-	padding: .6rem .8rem;
+	margin: 1rem;
+	padding: 1rem 2rem;
 	text-shadow: 2px 2px #000;
-	width: 8rem;
 
 	&:hover {
-		@include highlight-bg();
+		@include highlight-bg;
 	}
 }
 
 .activeButton {
-	@include highlight-bg();
+	@include highlight-bg;
 }
