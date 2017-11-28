@@ -53,6 +53,39 @@
 	width: 100%;
 }
 
+.player__main {
+	height: 20rem;
+}
+
+.player__main--action {
+	align-items: center;
+	background-color: $jprdy-blue;
+	clear: both;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0.2rem;
+}
+
+.player__main--input {
+	background: $jprdy-blue;
+	border: 0;
+	border-bottom: 2px solid $white;
+	color: $white;
+	font-size: $font-sm;
+	margin: 1rem 0;
+	padding: 0.4rem;
+	width: 80%;
+
+	&::placeholder {
+		color: $light-gray;
+	}
+
+	&:active,
+	&:focus {
+		outline: none;
+	}
+}
+
 .display-player-score {
 	background-color: $jprdy-blue;
 	color: $white;
@@ -75,7 +108,6 @@
 	color: $white;
 	display: inline-block;
 	font-family: 'Rock Salt', cursive;
-	height: 20rem;
 	margin-bottom: 0.2rem;
 	padding: 2rem;
 	width: 100%;

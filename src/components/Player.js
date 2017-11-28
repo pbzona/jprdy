@@ -2,23 +2,13 @@ import React from 'react';
 
 import AddNewPlayer from './AddNewPlayer';
 import DailyDouble from './DailyDouble';
-import Wager from './Wager';
-import FinalWager from './FinalWager';
-import FinalAnswer from './FinalAnswer';
 import PlayerScore from './PlayerScore';
+import PlayerDisplay from './PlayerDisplay';
+import PlayerAction from './PlayerAction';
 import ShowAnswer from './ShowAnswer';
 import RightAndWrong from './RightAndWrong';
 
 const Player = props => {
-	const fonts = [
-		'Rock Salt',
-		'Homemade Apple',
-		'Amatic SC',
-		'Shadows Into Light'
-	];
-
-	let activeFont = 0;
-
 	const displayScore =
 		props.score >= 0
 			? `$${require('numeral')(props.score).format('0,0')}`
@@ -30,50 +20,59 @@ const Player = props => {
 
 	if (props.index + 1 === props.isWagering) {
 		return (
-			<Wager
-				onWager={props.onWager}
-				index={props.index}
-				score={displayScore}
-				onAnswer={props.onAnswer}
-			/>
+			<div className="player__container">
+				<PlayerScore score={displayScore} index={props.index} />
+				<PlayerAction
+					index={props.index}
+					score={displayScore}
+					inputText="Wager"
+					button={false}
+					selector="player-wager"
+				/>
+				<RightAndWrong index={props.index} onFunction={props.onWager} />
+			</div>
 		);
 	}
 
 	if (props.round === 3) {
+		// Action for the Final Jeopardy wager
 		return (
-			<FinalWager
-				index={props.index}
-				score={displayScore}
-				onFinalWager={props.onFinalWager}
-			/>
+			<div className="player__container">
+				<PlayerScore score={displayScore} index={props.index} />
+				<PlayerAction
+					index={props.index}
+					inputText="Wager"
+					button={true}
+					buttonAction={props.onFinalWager}
+					buttonParam={props.index}
+					selector={`final-wager-${props.index}`}
+				/>
+			</div>
 		);
 	}
 
 	if (props.round === 4) {
+		// Action for entering your Final Jeopardy answer
 		return (
-			<FinalAnswer
-				index={props.index}
-				score={displayScore}
-				onFinalAnswer={props.onFinalAnswer}
-			/>
+			<div className="player__container">
+				<PlayerScore score={displayScore} index={props.index} />
+				<PlayerAction
+					index={props.index}
+					score={displayScore}
+					inputText="What is..."
+					button={true}
+					buttonAction={props.onFinalAnswer}
+					buttonParam={props.index}
+					selector={`final-answer-${props.index}`}
+				/>
+			</div>
 		);
 	}
 
 	return (
 		<div className="player__container">
 			<PlayerScore score={displayScore} index={props.index} />
-			<div className={`display-player-name display-player-${props.index}`}>
-				<h2
-					onClick={() => {
-						activeFont = activeFont < 3 ? activeFont + 1 : 0;
-						document.querySelector(
-							`.display-player-${props.index}`
-						).style.fontFamily = `${fonts[activeFont]}, cursive`;
-					}}
-				>
-					{props.player}
-				</h2>
-			</div>
+			<PlayerDisplay player={props.player} index={props.index} />
 
 			{props.round < 3 && (
 				<DailyDouble onStartWager={props.onStartWager} index={props.index} />
