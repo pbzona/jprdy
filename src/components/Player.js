@@ -5,6 +5,7 @@ import DailyDouble from './DailyDouble';
 import Wager from './Wager';
 import FinalWager from './FinalWager';
 import FinalAnswer from './FinalAnswer';
+import PlayerScore from './PlayerScore';
 import ShowAnswer from './ShowAnswer';
 import RightAndWrong from './RightAndWrong';
 
@@ -60,11 +61,7 @@ const Player = props => {
 
 	return (
 		<div className="player-container">
-			<div className="display-player-score">
-				<h2 id={`score-${props.index}`} className="score">
-					{displayScore}
-				</h2>
-			</div>
+			<PlayerScore score={displayScore} index={props.index} />
 			<div className={`display-player-name display-player-${props.index}`}>
 				<h2
 					onClick={() => {

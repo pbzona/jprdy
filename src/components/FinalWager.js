@@ -1,12 +1,10 @@
 import React from 'react';
 
+import PlayerScore from './PlayerScore';
+
 const FinalWager = props => (
 	<div className="player-container">
-		<div className="display-player-score">
-			<h2 id={`score-${props.index}`} className="score">
-				{props.score}
-			</h2>
-		</div>
+		<PlayerScore score={props.score} index={props.index} />
 		<div className="final-wager-container">
 			<input
 				className={`final-wager final-wager-${props.index}`}
