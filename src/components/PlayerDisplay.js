@@ -12,7 +12,7 @@ const PlayerDisplay = props => {
 
 	return (
 		<div
-			className={`player__main display-player-name display-player-${
+			className={`player player__main player__main--display display-player-${
 				props.index
 			}`}
 		>

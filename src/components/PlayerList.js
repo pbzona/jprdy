@@ -63,7 +63,7 @@ const PlayerList = props => {
 		);
 	});
 
-	return <div className="player-list">{playerList}</div>;
+	return <div className="list--players">{playerList}</div>;
 };
 
 export default PlayerList;

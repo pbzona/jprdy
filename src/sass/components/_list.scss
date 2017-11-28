@@ -10,3 +10,13 @@
 .list--score-buttons {
 	width: 100%;
 }
+
+.list--players {
+	display: flex;
+	flex-direction: row;
+	height: auto;
+	margin: 1rem auto;
+	justify-content: space-around;
+	overflow: auto;
+	width: auto;
+}

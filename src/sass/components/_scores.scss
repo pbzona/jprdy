@@ -1,12 +1,13 @@
-.score-button-container {
+.score__container {
 	display: inline-flex;
 }
 
-.score-button {
+.score__button {
 	background: $jprdy-blue;
 	border: none;
 	border-radius: 0;
 	color: $jprdy-yellow;
+	font-family: 'Open Sans', sans-serif;
 	font-size: $font-md;
 	font-weight: 700;
 	margin: 1rem;

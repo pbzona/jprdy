@@ -11,7 +11,7 @@ html {
 body {
   background: #ddd;
   box-sizing: border-box;
-  font-family: sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 @font-face {
   font-family: 'Gyparody';
@@ -19,19 +19,6 @@ body {
 
 h1 {
   font-family: 'Gyparody'; }
-
-.daily-double {
-  background: #021275;
-  background-image: none;
-  border-radius: 0;
-  color: #eee;
-  font-family: 'Spectral', serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-shadow: 3px 3px #000; }
-  .daily-double:hover {
-    background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-    cursor: pointer; }
 
 .header-main {
   background: #021275;
@@ -43,6 +30,10 @@ h1 {
     font-size: 10rem;
     letter-spacing: 2rem;
     text-transform: uppercase; }
+
+.player {
+  background: #021275;
+  color: #fff; }
 
 .player__container {
   display: inline;
@@ -65,10 +56,8 @@ h1 {
     color: #021275; }
 
 .player__submit-name {
-  background: #021275;
   border: none;
   border-radius: 0;
-  color: #fff;
   font-family: 'Spectral', serif;
   font-size: 2.4rem;
   margin: 0.4rem;
@@ -86,14 +75,29 @@ h1 {
   padding: 0.8rem;
   width: 100%; }
 
+.player__main {
+  height: 20rem;
+  margin-bottom: 0.2rem; }
+
+.player__main--display {
+  display: inline-block;
+  font-family: 'Rock Salt', cursive;
+  padding: 2rem;
+  width: 100%; }
+  .player__main--display h2 {
+    font-size: 6rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .player__main--display h2:hover {
+      cursor: pointer; }
+
 .player__main--action {
   align-items: center;
-  background-color: #021275;
   clear: both;
   display: flex;
-  height: 20rem;
-  justify-content: center;
-  margin-bottom: 0.2rem; }
+  justify-content: center; }
 
 .player__main--input {
   background: #021275;
@@ -109,36 +113,16 @@ h1 {
   .player__main--input:active, .player__main--input:focus {
     outline: none; }
 
-.display-player-score {
-  background-color: #021275;
-  color: #fff;
+.player__score {
   display: block;
   float: left;
   text-align: center;
   width: 100%;
   margin-bottom: 0.2rem; }
-  .display-player-score h2 {
+  .player__score h2 {
     margin: 1.6rem;
     font-size: 3.2rem;
     text-shadow: 3px 3px #000; }
-
-.display-player-name {
-  background-color: #021275;
-  color: #fff;
-  display: inline-block;
-  font-family: 'Rock Salt', cursive;
-  height: 20rem;
-  margin-bottom: 0.2rem;
-  padding: 2rem;
-  width: 100%; }
-  .display-player-name h2 {
-    font-size: 6rem;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    .display-player-name h2:hover {
-      cursor: pointer; }
 
 .player-list {
   display: flex;
@@ -148,53 +132,6 @@ h1 {
   justify-content: space-around;
   overflow: auto;
   width: auto; }
-
-.right-wrong-button {
-  background: #eee;
-  border: none;
-  border-radius: 0;
-  font-size: 2.4rem;
-  padding: 1rem;
-  width: 50%; }
-  .right-wrong-button:hover {
-    cursor: pointer; }
-  .right-wrong-button:active, .right-wrong-button:focus {
-    outline: none; }
-
-.right {
-  color: #579532;
-  transition: all 0.4s ease; }
-  .right:hover {
-    background: #579532;
-    color: #eee; }
-
-.wrong {
-  color: #aa3939;
-  transition: all 0.4s ease; }
-  .wrong:hover {
-    background: #aa3939;
-    color: #eee; }
-
-.score-button-container {
-  display: inline-flex; }
-
-.score-button {
-  background: #021275;
-  border: none;
-  border-radius: 0;
-  color: #f0b96c;
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin: 1rem;
-  padding: 1rem 2rem;
-  text-shadow: 3px 3px #000; }
-  .score-button:hover {
-    background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-    cursor: pointer; }
-
-.activeButton {
-  background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-  cursor: pointer; }
 
 .show-answer-container {
   background: #021275;
@@ -209,40 +146,17 @@ h1 {
   width: 100%;
   text-shadow: 3px 3px #000; }
 
-.wager-container {
-  align-items: center;
-  background-color: #021275;
-  clear: both;
-  display: flex;
-  height: 12rem;
-  justify-content: center;
-  margin-bottom: 2px; }
-
-.player-wager {
-  background: #021275;
-  border: 0;
-  border-bottom: 2px solid #fff;
-  color: #fff;
-  font-size: 2.4rem;
-  margin: 1rem 0;
-  padding: 0.4rem;
-  width: 80%; }
-  .player-wager::placeholder {
-    color: #eee; }
-  .player-wager:active, .player-wager:focus {
-    outline: none; }
-
 .button {
-  border-radius: 0; }
-
-.button--action {
   background: #021275;
-  border: 2px solid #ddd;
+  border-radius: 0;
   color: #fff;
-  font-family: 'Spectral', serif;
   font-size: 2.4rem;
   padding: 0.8rem;
-  text-transform: uppercase;
+  text-transform: uppercase; }
+
+.button--action {
+  border: 2px solid #ddd;
+  font-family: 'Spectral', serif;
   width: 100%;
   text-shadow: 3px 3px #000; }
   .button--action:hover {
@@ -260,6 +174,43 @@ h1 {
     background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
     cursor: pointer; }
 
+.button__daily-double {
+  background: #021275;
+  background-image: none;
+  border-radius: 0;
+  color: #eee;
+  font-family: 'Spectral', serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-shadow: 3px 3px #000; }
+  .button__daily-double:hover {
+    background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
+    cursor: pointer; }
+
+.button__answer {
+  background: #eee;
+  border: none;
+  font-size: 2.4rem;
+  padding: 1rem;
+  width: 50%; }
+  .button__answer:hover {
+    cursor: pointer; }
+  .button__answer:active, .button__answer:focus {
+    outline: none; }
+  .button__answer--right {
+    color: #579532;
+    transition: all 0.4s ease; }
+    .button__answer--right:hover {
+      background: #579532;
+      color: #eee; }
+  .button__answer--wrong {
+    color: #aa3939;
+    transition: all 0.4s ease; }
+    .button__answer--wrong:hover {
+      background: #aa3939;
+      color: #eee; }
+
 .list {
   margin: 1rem auto;
   text-align: center; }
@@ -269,3 +220,34 @@ h1 {
 
 .list--score-buttons {
   width: 100%; }
+
+.list--players {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin: 1rem auto;
+  justify-content: space-around;
+  overflow: auto;
+  width: auto; }
+
+.score__container {
+  display: inline-flex; }
+
+.score__button {
+  background: #021275;
+  border: none;
+  border-radius: 0;
+  color: #f0b96c;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  text-shadow: 3px 3px #000; }
+  .score__button:hover {
+    background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
+    cursor: pointer; }
+
+.activeButton {
+  background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
+  cursor: pointer; }

@@ -4,13 +4,13 @@ const RightAndWrong = props => {
 	return (
 		<div>
 			<button
-				className="right-wrong-button right"
+				className="button button__answer button__answer--right"
 				onClick={() => props.onFunction(props.index, true)}
 			>
 				&#x2713;
 			</button>
 			<button
-				className="right-wrong-button wrong"
+				className="button button__answer button__answer--wrong"
 				onClick={() => props.onFunction(props.index, false)}
 			>
 				&#x2717;

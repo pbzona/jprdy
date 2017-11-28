@@ -2,9 +2,9 @@ import React from 'react';
 
 const ScoreButton = ({ onSelectValue, value, buttonKey }) => {
 	return (
-		<div className="score-button-container">
+		<div className="score__container">
 			<button
-				className={`score-button button-${buttonKey}`}
+				className={`score__button button-${buttonKey}`}
 				onClick={() => onSelectValue(value, buttonKey)}
 			>
 				${value}

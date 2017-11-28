@@ -83,17 +83,16 @@ const Player = props => {
 			)}
 
 			{props.round === 5 && (
-				<ShowAnswer
-					answer={props.finalData.answers[props.index]}
-					index={props.index}
-				/>
-			)}
-
-			{props.round === 5 && (
-				<RightAndWrong
-					index={props.index}
-					onFunction={props.onFinalAnswerCheck}
-				/>
+				<div>
+					<ShowAnswer
+						answer={props.finalData.answers[props.index]}
+						index={props.index}
+					/>
+					<RightAndWrong
+						index={props.index}
+						onFunction={props.onFinalAnswerCheck}
+					/>
+				</div>
 			)}
 		</div>
 	);
