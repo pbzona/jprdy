@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddNewPlayer = ({createPlayer}) => {
+const AddNewPlayer = ({ createPlayer }) => {
 	return (
 		<div className="player-container">
 			<input className="add-new-player" placeholder="Name" />
@@ -9,6 +9,6 @@ const AddNewPlayer = ({createPlayer}) => {
 			</button>
 		</div>
 	);
-}
+};
 
 export default AddNewPlayer;

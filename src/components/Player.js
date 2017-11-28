@@ -94,9 +94,11 @@ const Player = props => {
 			)}
 
 			{props.round === 5 && (
-				<RightAndWrong index={props.index} onFunction={props.onFinalAnswerCheck} />
+				<RightAndWrong
+					index={props.index}
+					onFunction={props.onFinalAnswerCheck}
+				/>
 			)}
-
 		</div>
 	);
 };

@@ -124,7 +124,7 @@ class App extends Component {
 			const newValues = this.state.buttonValues.map(value => {
 				return value * 2;
 			});
-			
+
 			this.setState(() => {
 				return {
 					buttonValues: newValues,

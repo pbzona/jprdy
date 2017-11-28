@@ -15,14 +15,14 @@
 	color: $white;
 	font-size: $font-sm;
 	margin: 1rem 0;
-	padding: .4rem;
+	padding: 0.4rem;
 	width: 80%;
 
 	&::placeholder {
 		color: $light-gray;
 	}
 
-	&:active, 
+	&:active,
 	&:focus {
 		outline: none;
 	}

@@ -1,13 +1,17 @@
 @mixin clearfix {
 	&::after {
-        content: "";
-        display: table;
-        clear: both;
-  }
+		content: '';
+		display: table;
+		clear: both;
+	}
 }
 
 @mixin highlight-bg {
-	background-image: linear-gradient(to bottom, $highlight-pink, $highlight-purple);
+	background-image: linear-gradient(
+		to bottom,
+		$highlight-pink,
+		$highlight-purple
+	);
 	cursor: pointer;
 }
 

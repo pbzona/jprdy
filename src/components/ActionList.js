@@ -5,19 +5,20 @@ import ActionButton from './ActionButton';
 const ActionList = props => {
 	return (
 		<div className="list list--action">
-			{(props.shouldAddPlayerDisplay && props.numPlayers < 4) && 
-				<ActionButton
-					buttonFunction={props.onAddPlayer}
-					buttonText="Add New Player"
-				/>
-			}
+			{props.shouldAddPlayerDisplay &&
+				props.numPlayers < 4 && (
+					<ActionButton
+						buttonFunction={props.onAddPlayer}
+						buttonText="Add New Player"
+					/>
+				)}
 
-			{props.shouldRoundChangeDisplay && 
+			{props.shouldRoundChangeDisplay && (
 				<ActionButton
 					buttonFunction={props.onRoundChange}
 					buttonText={props.round < 2 ? 'Double Jeopardy' : 'Final Jeopardy'}
 				/>
-			}
+			)}
 
 			<ActionButton buttonFunction={props.onReset} buttonText="New Game" />
 		</div>

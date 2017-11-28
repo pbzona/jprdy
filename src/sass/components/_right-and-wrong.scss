@@ -10,7 +10,8 @@
 		cursor: pointer;
 	}
 
-	&:active, &:focus {
+	&:active,
+	&:focus {
 		outline: none;
 	}
 }
