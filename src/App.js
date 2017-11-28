@@ -163,7 +163,7 @@ class App extends Component {
 	onCreatePlayer(e) {
 		e.preventDefault();
 
-		const newPlayer = document.querySelector('.add-new-player').value;
+		const newPlayer = document.querySelector('.player__input-name').value;
 		const newPlayerList = this.state.players.slice(0, -1).concat(newPlayer);
 		const otherScores = this.state.playerScores;
 

@@ -1,14 +1,11 @@
 import React from 'react';
 
+import PlayerScore from './PlayerScore';
 import RightAndWrong from './RightAndWrong';
 
 const Wager = props => (
-	<div className="player-container">
-		<div className="display-player-score">
-			<h2 id={`score-${props.index}`} className="score">
-				{props.score}
-			</h2>
-		</div>
+	<div className="player__container">
+		<PlayerScore score={props.score} index={props.index} />
 		<div className="wager-container">
 			<input className="player-wager" placeholder="Wager" />
 		</div>

@@ -3,13 +3,9 @@
 	background-image: none;
 	border-radius: 0;
 	color: $light-gray;
-	font-size: $font-sm;
 	font-family: 'Spectral', serif;
 	font-weight: 500;
-	margin-bottom: 0.2rem;
-	padding: 0.6rem;
 	text-transform: uppercase;
-	width: 100%;
 
 	@include textShadow;
 

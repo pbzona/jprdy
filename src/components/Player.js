@@ -60,7 +60,7 @@ const Player = props => {
 	}
 
 	return (
-		<div className="player-container">
+		<div className="player__container">
 			<PlayerScore score={displayScore} index={props.index} />
 			<div className={`display-player-name display-player-${props.index}`}>
 				<h2

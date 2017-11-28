@@ -2,9 +2,9 @@ import React from 'react';
 
 const AddNewPlayer = ({ createPlayer }) => {
 	return (
-		<div className="player-container">
-			<input className="add-new-player" placeholder="Name" />
-			<button className="add-player-submit" onClick={createPlayer}>
+		<div className="player__container">
+			<input className="player__input-name" placeholder="Name" />
+			<button className="player__submit-name" onClick={createPlayer}>
 				Add
 			</button>
 		</div>

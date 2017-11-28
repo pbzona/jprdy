@@ -19,3 +19,17 @@
 		cursor: pointer;
 	}
 }
+
+.button--final {
+	background: $jprdy-blue;
+	border: none;
+	color: $white;
+	font-family: 'Spectral', serif;
+	text-transform: uppercase;
+
+	@include textShadow;
+
+	&:hover {
+		@include highlight-bg;
+	}
+}

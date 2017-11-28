@@ -1,9 +1,6 @@
 .show-answer-container {
-	align-items: center;
 	background: $jprdy-blue;
-	display: flex;
-	margin-bottom: 2px;
-	width: 100%;
+	text-align: center;
 }
 
 .show-answer {
@@ -11,8 +8,6 @@
 	border-radius: 0;
 	color: #fff;
 	font-family: 'Spectral', serif;
-	font-size: $font-sm;
-	padding: 0.8rem;
 	text-transform: uppercase;
 	width: 100%;
 

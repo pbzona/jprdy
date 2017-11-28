@@ -3,7 +3,7 @@ import React from 'react';
 import PlayerScore from './PlayerScore';
 
 const FinalWager = props => (
-	<div className="player-container">
+	<div className="player__container">
 		<PlayerScore score={props.score} index={props.index} />
 		<div className="final-wager-container">
 			<input
@@ -13,7 +13,7 @@ const FinalWager = props => (
 		</div>
 		<div className="final-button-container">
 			<button
-				className="final-button"
+				className="player__action button button--final"
 				onClick={() => props.onFinalWager(props.index)}
 			>
 				Done

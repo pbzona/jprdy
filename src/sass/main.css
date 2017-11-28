@@ -20,47 +20,14 @@ body {
 h1 {
   font-family: 'Gyparody'; }
 
-.add-new-player {
-  background: #ddd;
-  border: none;
-  border-bottom: 2px solid #021275;
-  color: #021275;
-  font-size: 3.2rem;
-  margin-top: 20%;
-  width: 80%; }
-  .add-new-player:active, .add-new-player:focus {
-    outline: none; }
-  .add-new-player::placeholder {
-    color: #021275; }
-
-.add-player-submit {
-  background: #021275;
-  border: none;
-  border-radius: 0;
-  color: #fff;
-  font-family: 'Spectral', serif;
-  font-size: 2.4rem;
-  margin: 0.4rem;
-  padding: 0.6rem;
-  text-transform: uppercase;
-  width: 80%;
-  text-shadow: 3px 3px #000; }
-  .add-player-submit:hover {
-    color: #f0b96c;
-    cursor: pointer; }
-
 .daily-double {
   background: #021275;
   background-image: none;
   border-radius: 0;
   color: #eee;
-  font-size: 2.4rem;
   font-family: 'Spectral', serif;
   font-weight: 500;
-  margin-bottom: 0.2rem;
-  padding: 0.6rem;
   text-transform: uppercase;
-  width: 100%;
   text-shadow: 3px 3px #000; }
   .daily-double:hover {
     background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
@@ -72,7 +39,7 @@ h1 {
   clear: both;
   display: flex;
   justify-content: center;
-  margin-bottom: 2px; }
+  margin-bottom: 0.2rem; }
 
 .final-answer {
   background: #021275;
@@ -88,28 +55,13 @@ h1 {
   .final-answer:active, .final-answer:focus {
     outline: none; }
 
-.final-button {
-  background: #021275;
-  border: none;
-  border-radius: 0;
-  color: #fff;
-  font-family: 'Spectral', serif;
-  font-size: 2.4rem;
-  padding: 0.8rem;
-  text-transform: uppercase;
-  width: 100%;
-  text-shadow: 3px 3px #000; }
-  .final-button:hover {
-    background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-    cursor: pointer; }
-
 .final-wager-container {
   align-items: center;
   background-color: #021275;
   clear: both;
   display: flex;
   justify-content: center;
-  margin-bottom: 2px; }
+  margin-bottom: 0.2rem; }
 
 .final-wager {
   background: #021275;
@@ -125,20 +77,6 @@ h1 {
   .final-wager:active, .final-wager:focus {
     outline: none; }
 
-.final-button {
-  background: #021275;
-  border: none;
-  border-radius: 0;
-  color: #fff;
-  font-family: 'Spectral', serif;
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  width: 100%;
-  text-shadow: 3px 3px #000; }
-  .final-button:hover {
-    background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
-    cursor: pointer; }
-
 .header-main {
   background: #021275;
   color: #fff;
@@ -150,12 +88,47 @@ h1 {
     letter-spacing: 2rem;
     text-transform: uppercase; }
 
-.player-container {
+.player__container {
   display: inline;
   margin: 1rem;
   overflow: auto;
   text-align: center;
   min-width: 40rem; }
+
+.player__input-name {
+  background: #ddd;
+  border: none;
+  border-bottom: 2px solid #021275;
+  color: #021275;
+  font-size: 3.2rem;
+  margin-top: 20%;
+  width: 80%; }
+  .player__input-name:active, .player__input-name:focus {
+    outline: none; }
+  .player__input-name::placeholder {
+    color: #021275; }
+
+.player__submit-name {
+  background: #021275;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-family: 'Spectral', serif;
+  font-size: 2.4rem;
+  margin: 0.4rem;
+  padding: 0.6rem;
+  text-transform: uppercase;
+  width: 80%;
+  text-shadow: 3px 3px #000; }
+  .player__submit-name:hover {
+    color: #f0b96c;
+    cursor: pointer; }
+
+.player__action {
+  font-size: 2.4rem;
+  margin-bottom: 0.2rem;
+  padding: 0.8rem;
+  width: 100%; }
 
 .display-player-score {
   background-color: #021275;
@@ -245,19 +218,14 @@ h1 {
   cursor: pointer; }
 
 .show-answer-container {
-  align-items: center;
   background: #021275;
-  display: flex;
-  margin-bottom: 2px;
-  width: 100%; }
+  text-align: center; }
 
 .show-answer {
   border: none;
   border-radius: 0;
   color: #fff;
   font-family: 'Spectral', serif;
-  font-size: 2.4rem;
-  padding: 0.8rem;
   text-transform: uppercase;
   width: 100%;
   text-shadow: 3px 3px #000; }
@@ -300,6 +268,17 @@ h1 {
   text-shadow: 3px 3px #000; }
   .button--action:hover {
     color: #f0b96c;
+    cursor: pointer; }
+
+.button--final {
+  background: #021275;
+  border: none;
+  color: #fff;
+  font-family: 'Spectral', serif;
+  text-transform: uppercase;
+  text-shadow: 3px 3px #000; }
+  .button--final:hover {
+    background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
     cursor: pointer; }
 
 .list {

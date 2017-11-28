@@ -4,7 +4,7 @@
 	clear: both;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 2px;
+	margin-bottom: 0.2rem;
 }
 
 .final-answer {
@@ -24,23 +24,5 @@
 	&:active,
 	&:focus {
 		outline: none;
-	}
-}
-
-.final-button {
-	background: $jprdy-blue;
-	border: none;
-	border-radius: 0;
-	color: $white;
-	font-family: 'Spectral', serif;
-	font-size: $font-sm;
-	padding: 0.8rem;
-	text-transform: uppercase;
-	width: 100%;
-
-	@include textShadow;
-
-	&:hover {
-		@include highlight-bg;
 	}
 }
