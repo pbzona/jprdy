@@ -4,7 +4,7 @@ import ActionButton from './ActionButton';
 
 const ActionList = props => {
 	return (
-		<div className="action-list">
+		<div className="list list--action">
 			{(props.shouldAddPlayerDisplay && props.numPlayers < 4) && 
 				<ActionButton
 					buttonFunction={props.onAddPlayer}

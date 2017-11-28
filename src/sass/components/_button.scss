@@ -7,11 +7,12 @@
 	border: 2px solid $background-gray;
 	color: $white;
 	font-family: 'Spectral', serif;
-	font-size: 2.4rem;
+	font-size: $font-sm;
 	padding: .8rem;
 	text-transform: uppercase;
-	text-shadow: 2px 2px #000;
 	width: 100%;
+
+	@include textShadow;
 
 	&:hover {
 		color: $jprdy-yellow;

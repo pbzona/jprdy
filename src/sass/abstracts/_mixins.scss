@@ -10,3 +10,14 @@
 	background-image: linear-gradient(to bottom, $highlight-pink, $highlight-purple);
 	cursor: pointer;
 }
+
+@mixin centerInContainer {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin textShadow {
+	text-shadow: 3px 3px #000;
+}

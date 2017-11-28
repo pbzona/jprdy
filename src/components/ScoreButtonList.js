@@ -15,7 +15,7 @@ const ScoreButtonList = props => {
 	});
 
 	return (
-		<div className="score-button-list-container">
+		<div className="list list--score-buttons">
 			<ul>{scoreButtons}</ul>
 		</div>
 	);

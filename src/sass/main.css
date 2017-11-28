@@ -13,10 +13,12 @@ body {
   box-sizing: border-box;
   font-family: sans-serif; }
 
-.action-list {
-  margin: 1rem auto;
-  text-align: center;
-  width: 40%; }
+@font-face {
+  font-family: 'Gyparody';
+  src: url("../fonts/gyparody.ttf") format("truetype"); }
+
+h1 {
+  font-family: 'Gyparody'; }
 
 .add-new-player {
   background: #ddd;
@@ -41,8 +43,8 @@ body {
   margin: 0.4rem;
   padding: 0.6rem;
   text-transform: uppercase;
-  text-shadow: 2px 2px #000;
-  width: 80%; }
+  width: 80%;
+  text-shadow: 3px 3px #000; }
   .add-player-submit:hover {
     color: #f0b96c;
     cursor: pointer; }
@@ -58,8 +60,8 @@ body {
   margin-bottom: 0.2rem;
   padding: .6rem;
   text-transform: uppercase;
-  text-shadow: 2px 2px #000;
-  width: 100%; }
+  width: 100%;
+  text-shadow: 3px 3px #000; }
   .daily-double:hover {
     background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
     cursor: pointer; }
@@ -69,7 +71,6 @@ body {
   background-color: #021275;
   clear: both;
   display: flex;
-  height: 12rem;
   justify-content: center;
   margin-bottom: 2px; }
 
@@ -96,7 +97,8 @@ body {
   font-size: 2.4rem;
   padding: .8rem;
   text-transform: uppercase;
-  width: 100%; }
+  width: 100%;
+  text-shadow: 3px 3px #000; }
   .final-button:hover {
     background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
     cursor: pointer; }
@@ -106,7 +108,6 @@ body {
   background-color: #021275;
   clear: both;
   display: flex;
-  height: 12rem;
   justify-content: center;
   margin-bottom: 2px; }
 
@@ -132,14 +133,11 @@ body {
   font-family: 'Spectral', serif;
   font-size: 2.4rem;
   text-transform: uppercase;
-  width: 100%; }
+  width: 100%;
+  text-shadow: 3px 3px #000; }
   .final-button:hover {
     background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
     cursor: pointer; }
-
-@font-face {
-  font-family: 'Gyparody';
-  src: url(../fonts/gyparody.ttf) format("truetype"); }
 
 .header-main {
   background: #021275;
@@ -148,13 +146,13 @@ body {
   text-align: center;
   width: 100%; }
   .header-main h1 {
-    font-family: 'Gyparody';
     font-size: 10rem;
     letter-spacing: 2rem;
     text-transform: uppercase; }
 
 .player-container {
   display: inline;
+  margin: 1rem;
   overflow: auto;
   text-align: center;
   min-width: 40rem; }
@@ -170,7 +168,7 @@ body {
   .display-player-score h2 {
     margin: 1.6rem;
     font-size: 3.2rem;
-    text-shadow: 2px 2px #000; }
+    text-shadow: 3px 3px #000; }
 
 .display-player-name {
   background-color: #021275;
@@ -178,15 +176,15 @@ body {
   display: inline-block;
   font-family: 'Rock Salt', cursive;
   height: 20rem;
-  margin-bottom: 2px;
+  margin-bottom: 0.2rem;
   padding: 2rem;
   width: 100%; }
   .display-player-name h2 {
+    font-size: 6rem;
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 6rem; }
+    transform: translate(-50%, -50%); }
     .display-player-name h2:hover {
       cursor: pointer; }
 
@@ -237,7 +235,7 @@ body {
   font-weight: 700;
   margin: 1rem;
   padding: 1rem 2rem;
-  text-shadow: 2px 2px #000; }
+  text-shadow: 3px 3px #000; }
   .score-button:hover {
     background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
     cursor: pointer; }
@@ -245,11 +243,6 @@ body {
 .activeButton {
   background-image: linear-gradient(to bottom, #8C0233, #3E01A3);
   cursor: pointer; }
-
-.score-button-list-container {
-  margin: 2rem auto;
-  text-align: center;
-  width: 100%; }
 
 .show-answer-container {
   align-items: center;
@@ -266,7 +259,8 @@ body {
   font-size: 2.4rem;
   padding: .8rem;
   text-transform: uppercase;
-  width: 100%; }
+  width: 100%;
+  text-shadow: 3px 3px #000; }
 
 .wager-container {
   align-items: center;
@@ -302,8 +296,18 @@ body {
   font-size: 2.4rem;
   padding: .8rem;
   text-transform: uppercase;
-  text-shadow: 2px 2px #000;
-  width: 100%; }
+  width: 100%;
+  text-shadow: 3px 3px #000; }
   .button--action:hover {
     color: #f0b96c;
     cursor: pointer; }
+
+.list {
+  margin: 1rem auto;
+  text-align: center; }
+
+.list--action {
+  width: 50%; }
+
+.list--score-buttons {
+  width: 100%; }

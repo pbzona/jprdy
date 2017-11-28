@@ -1,8 +1,3 @@
-@font-face {
-	font-family: 'Gyparody';
-	src: url(../fonts/gyparody.ttf) format('truetype');
-}
-
 .header-main {
 	background: $jprdy-blue;
 	color: $white;
@@ -11,7 +6,6 @@
 	width: 100%;
 
 	h1 {
-		font-family: 'Gyparody';
 		font-size: 10rem;
 		letter-spacing: 2rem;
 		text-transform: uppercase;
