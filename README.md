@@ -12,7 +12,10 @@ If you just want to play with the app, you can use it here:
 
 [JPRDY](https://jprdy.phizon.io)
 
-As of right now, you can play a full game of Jeopardy, all the way through to the final round. 
+As of right now, you can play a full game of Jeopardy, all the way through to the final round. This build reflects the latest release, but you can get the bleeding edge version by cloning the project and running these commands:
+
+`npm install`
+`npm start`
 
 ### The First Round
 
@@ -36,7 +39,7 @@ In this round, each player must first enter a wager. You can do this during the 
 
 After everyone has answered the question, the right and wrong buttons will be displayed below each player's answer (so no one can lie...). For each player, click either the check or the X, and their wager will be added or subtracted from their score.
 
-To figure who won, check the final scores!
+To figure out who won, check the final scores!
 
 ### Notes
 
@@ -44,9 +47,9 @@ To figure who won, check the final scores!
 
 If you notice something specific and would like to document it to be fixed in an upcoming release, please open an issue. I'll be working through a lot of these myself but it's definitely possible I'll miss things.
 
-### House Rules
+### House rules
 
-Since you're playing along at home, different rules may apply in terms of what counts as a correct answer, who gets Daily Doubles, etc. 
+Since you're playing along at home, different rules may apply in terms of what counts as a correct answer, who gets Daily Doubles, etc.
 
 You can apply whatever house rules you want, and if you have a specific feature that isn't supported by the app, feel free to open an issue. I'd like to expand this section in the future, since I'm sure different people play in different ways at home.
 
@@ -72,17 +75,17 @@ The genesis for this project was its design. I mentioned earlier that there are 
 
 This project was bootstrapped using `create-react-app`, so you can see the first two for yourself by installing the project and running `npm start` or `yarn start`.
 
-The third piece was the most fun to implement. For the header text, I used a free web font called Gyparody (great name). The actual Jeopardy number scores use a font called Swiss 911, which is closely related to Helvetica (my implementation). I used the Google Fonts' "Spectral" to mimic the question text in some buttons. Finally, as an Easter egg, player names (once added) are clickable. This changes the name to a selection of one of four handwriting style fonts, also courtesy of Google.
+The third piece was the most fun to implement. For the header text, I used a free web font called Gyparody (great name). The actual Jeopardy number scores use a font called Swiss 911, which is closely related to Helvetica (and Open Sans, which I used). I used the Google Fonts' "Spectral" to mimic the question text in some buttons. Finally, as an Easter egg, player names (once added) are clickable. This changes the name to a selection of one of four handwriting style fonts, also courtesy of Google.
 
 The end result is a style that looks pretty close to the real thing, in my opinion.
 
-## Latest changes
+## Current state
 
-11/20/17 - Made some changes to the wager UI, and fixed the ugliness of the buttons at the bottom. Also a random bugfix. Decided to start using a not-quite-defined release tagging system.
+I moved to a [release system](https://github.com/pbzona/jprdy/releases), so I'll try to provide incremental updates here when it makes sense, rather than tracking daily changes like before.
 
-11/22/17 - Final Jeopardy is done (finally). You can now play a full game of Jeopardy, although more user features are still to come.
+Since v0.3, I've been doing some major code cleanup. This includes something that has been on my wishlist for a while now - adding SCSS support - and I didn't even have to eject. The result is fewer components, WAY less redundant code, and more reusable pieces. Getting to v0.3 was a matter of making something that works. Right now, I want to focus on making this project sustainable, which is a challenge based on how haphazardly some of the old stuff was thrown together.
 
-11/27/17 - Styling is now done in SCSS. No major changes to overall project design structure yet, but this will make those changes much, much easier.
+The next release will most likely be a slimmed down version of the working app, with code that will be much easier to build on. Once that's done, I'll start adding features again in subsequent releases.
 
 ## Still to-do
 
@@ -91,5 +94,3 @@ The end result is a style that looks pretty close to the real thing, in my opini
 - Write tests
 - Mobile friendliness (currently Jprdy looks best on a full size screen)
 - Refactor into something readable - eject to use SCSS, better component design, etc.
-
-This is an incomplete app that is being actively worked on. This active work is haphazard at times, and certain implementations have been hacked together to create a working prototype. It's also my first "real" React project. I don't want to apologize for my code, but know that I am aware of the issues.
