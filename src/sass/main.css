@@ -20,13 +20,13 @@ body {
 h1 {
   font-family: 'Gyparody'; }
 
-.header-main {
+.header__main {
   background: #021275;
   color: #fff;
   padding: 1.6rem;
   text-align: center;
   width: 100%; }
-  .header-main h1 {
+  .header__main h1 {
     font-size: 10rem;
     letter-spacing: 2rem;
     text-transform: uppercase; }
