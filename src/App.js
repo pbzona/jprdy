@@ -81,7 +81,7 @@ class App extends Component {
 			};
 		});
 
-		var allScoreButtons = document.querySelectorAll('.score-button');
+		var allScoreButtons = document.querySelectorAll('.score__button');
 		var newActiveButton = document.querySelector(`.button-${key}`);
 
 		allScoreButtons.forEach(button => {
