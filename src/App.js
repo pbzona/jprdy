@@ -16,7 +16,8 @@ const initState = {
 	final: {
 		wagers: {},
 		answers: {}
-	}
+	},
+	gameInProgress: false
 };
 
 class App extends Component {
@@ -110,6 +111,7 @@ class App extends Component {
 
 		this.setState(() => {
 			return {
+				gameInProgress: true,
 				playerScores: {
 					...otherScores,
 					[playerKey]: newScore
@@ -363,6 +365,8 @@ class App extends Component {
 				/>
 				<ActionList
 					onAddPlayer={this.onAddPlayer}
+					gameInProgress={this.state.gameInProgress}
+					addingPlayer={this.state.addingPlayer}
 					numPlayers={this.state.players.length}
 					shouldAddPlayerDisplay={!this.state.addingPlayer}
 					round={this.state.round}
