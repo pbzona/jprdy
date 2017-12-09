@@ -248,6 +248,6 @@ h1 {
     background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
     cursor: pointer; }
 
-.activeButton {
+.score__button--active {
   background-image: linear-gradient(to bottom, #8c0233, #3e01a3);
   cursor: pointer; }

@@ -72,6 +72,11 @@ class App extends Component {
 				...initState
 			};
 		});
+
+		var allScoreButtons = document.querySelectorAll('.score__button');
+		allScoreButtons.forEach(button => {
+			button.classList.remove('score__button--active');
+		});
 	}
 
 	// Sets the active value when a score button is clicked
@@ -86,10 +91,10 @@ class App extends Component {
 		var newActiveButton = document.querySelector(`.button-${key}`);
 
 		allScoreButtons.forEach(button => {
-			button.classList.remove('activeButton');
+			button.classList.remove('score__button--active');
 		});
 
-		newActiveButton.classList.add('activeButton');
+		newActiveButton.classList.add('score__button--active');
 	}
 
 	// Intermediate state when adding a new player
