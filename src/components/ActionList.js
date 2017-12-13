@@ -5,7 +5,7 @@ import ActionButton from './ActionButton';
 const ActionList = props => {
 	return (
 		<div className="list list--action">
-			{props.shouldAddPlayerDisplay &&
+			{!props.addingPlayer &&
 				props.numPlayers < 4 &&
 				!props.gameInProgress &&
 				props.round === 1 && (
@@ -15,7 +15,8 @@ const ActionList = props => {
 					/>
 				)}
 
-			{props.shouldRoundChangeDisplay &&
+			{props.round < 3 &&
+				props.numPlayers >= 1 &&
 				!props.addingPlayer && (
 					<ActionButton
 						buttonFunction={props.onRoundChange}
