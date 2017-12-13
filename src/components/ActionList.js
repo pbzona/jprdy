@@ -7,7 +7,8 @@ const ActionList = props => {
 		<div className="list list--action">
 			{props.shouldAddPlayerDisplay &&
 				props.numPlayers < 4 &&
-				!props.gameInProgress && (
+				!props.gameInProgress &&
+				props.round === 1 && (
 					<ActionButton
 						buttonFunction={props.onAddPlayer}
 						buttonText="Add New Player"
