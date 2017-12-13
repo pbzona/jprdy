@@ -376,7 +376,9 @@ class App extends Component {
 					shouldAddPlayerDisplay={!this.state.addingPlayer}
 					round={this.state.round}
 					onRoundChange={this.onRoundChange}
-					shouldRoundChangeDisplay={this.state.round < 3}
+					shouldRoundChangeDisplay={
+						this.state.round < 3 && this.state.players.length >= 1
+					}
 					onReset={this.onReset}
 				/>
 			</div>
