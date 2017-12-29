@@ -37,11 +37,12 @@
 .button__daily-double {
 	background: $jprdy-blue;
 	background-image: none;
+	border: none;
 	border-radius: 0;
 	color: $light-gray;
 	font-family: 'Spectral', serif;
 	font-size: $font-sm;
-	font-weight: 500;
+	font-weight: 700;
 	text-transform: uppercase;
 
 	@include textShadow;
