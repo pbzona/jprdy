@@ -4,6 +4,7 @@ import Header from './components/Header';
 import ScoreButtonList from './components/ScoreButtonList';
 import PlayerList from './components/PlayerList';
 import ActionList from './components/ActionList';
+import Footer from './components/Footer';
 
 const initState = {
 	buttonValues: [200, 400, 600, 800, 1000],
@@ -349,34 +350,37 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header title="Jprdy!" />
-				<ScoreButtonList
-					buttonValues={this.state.buttonValues}
-					onSelectValue={this.onSelectValue}
-				/>
-				<PlayerList
-					players={this.state.players}
-					onAnswer={this.onAnswer}
-					onWager={this.onWager}
-					onStartWager={this.onStartWager}
-					isWagering={this.state.isWagering}
-					needName={this.state.addingPlayer}
-					createPlayer={this.onCreatePlayer}
-					playerScores={this.state.playerScores}
-					round={this.state.round}
-					onFinalWager={this.onFinalWager}
-					onFinalAnswer={this.onFinalAnswer}
-					onFinalAnswerCheck={this.onFinalAnswerCheck}
-					finalData={this.state.final}
-				/>
-				<ActionList
-					onAddPlayer={this.onAddPlayer}
-					gameInProgress={this.state.gameInProgress}
-					addingPlayer={this.state.addingPlayer}
-					numPlayers={this.state.players.length}
-					round={this.state.round}
-					onRoundChange={this.onRoundChange}
-					onReset={this.onReset}
-				/>
+				<div className="App__container">
+					<ScoreButtonList
+						buttonValues={this.state.buttonValues}
+						onSelectValue={this.onSelectValue}
+					/>
+					<PlayerList
+						players={this.state.players}
+						onAnswer={this.onAnswer}
+						onWager={this.onWager}
+						onStartWager={this.onStartWager}
+						isWagering={this.state.isWagering}
+						needName={this.state.addingPlayer}
+						createPlayer={this.onCreatePlayer}
+						playerScores={this.state.playerScores}
+						round={this.state.round}
+						onFinalWager={this.onFinalWager}
+						onFinalAnswer={this.onFinalAnswer}
+						onFinalAnswerCheck={this.onFinalAnswerCheck}
+						finalData={this.state.final}
+					/>
+					<ActionList
+						onAddPlayer={this.onAddPlayer}
+						gameInProgress={this.state.gameInProgress}
+						addingPlayer={this.state.addingPlayer}
+						numPlayers={this.state.players.length}
+						round={this.state.round}
+						onRoundChange={this.onRoundChange}
+						onReset={this.onReset}
+					/>
+				</div>
+				<Footer/>
 			</div>
 		);
 	}

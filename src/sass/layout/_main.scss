@@ -1,1 +1,11 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
+  &__container {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 2.4rem;
+  }
+}
