@@ -16,7 +16,8 @@ const initState = {
 	isWagering: 0,
 	final: {
 		wagers: {},
-		answers: {}
+		answers: {},
+		haveAnswered: []
 	},
 	gameInProgress: false
 };
@@ -330,20 +331,35 @@ class App extends Component {
 
 	//Checks to see if Final Jeopardy answer was correct
 	onFinalAnswerCheck(playerKey, isCorrect) {
-		const playerWager = this.state.final.wagers[playerKey];
-		const newScore = isCorrect
-			? this.state.playerScores[playerKey] + playerWager
-			: this.state.playerScores[playerKey] - playerWager;
-		const otherScores = this.state.playerScores;
+		const playersWhoHaveAnswered = this.state.final.haveAnswered || [];
+		const hasAnswered = playersWhoHaveAnswered.includes(playerKey);
 
-		this.setState(() => {
-			return {
-				playerScores: {
-					...otherScores,
-					[playerKey]: newScore
-				}
-			};
-		});
+		// Make sure this player has not already incremented/decremented their final score before making the change
+		if (!hasAnswered) {
+			const playerWager = this.state.final.wagers[playerKey];
+			const newScore = isCorrect
+				? this.state.playerScores[playerKey] + playerWager
+				: this.state.playerScores[playerKey] - playerWager;
+			const otherScores = this.state.playerScores;
+
+			this.setState(() => {
+				return {
+					playerScores: {
+						...otherScores,
+						[playerKey]: newScore
+					},
+					final: {
+						wagers: {
+							...this.state.final.wagers
+						},
+						answers: {
+							...this.state.final.answers
+						},
+						haveAnswered: [...playersWhoHaveAnswered, playerKey]
+					}
+				};
+			});
+		}
 	}
 
 	render() {
