@@ -88,10 +88,12 @@ const Player = props => {
 						answer={props.finalData.answers[props.index]}
 						index={props.index}
 					/>
-					<RightAndWrong
-						index={props.index}
-						onFunction={props.onFinalAnswerCheck}
-					/>
+					{(!props.finalData.haveAnswered || !props.finalData.haveAnswered.includes(props.index)) && (
+						<RightAndWrong
+							index={props.index}
+							onFunction={props.onFinalAnswerCheck}
+						/>
+					)}
 				</div>
 			)}
 		</div>
