@@ -238,15 +238,20 @@ class App extends Component {
 
 	// Store wager data for Final Jeopardy
 	onFinalWager(playerKey) {
+		// Read wager amount from input
 		const wager = parseInt(
 			document.querySelector(`.final-wager-${playerKey}`).value,
 			10
 		);
+
 		const otherWagers = this.state.final.wagers;
 		let isFinalWager;
+
+		// Check if there is only one player, if so marks this as the final wager
 		if (this.state.players.length === 1) {
 			isFinalWager = true;
 		} else {
+			//
 			isFinalWager = otherWagers
 				? Object.keys(otherWagers).length === this.state.players.length - 1
 				: false;
@@ -299,9 +304,7 @@ class App extends Component {
 			this.setState(() => {
 				return {
 					final: {
-						wagers: {
-							...this.state.final.wagers
-						},
+						...this.state.final,
 						answers: {
 							...otherAnswers,
 							[playerKey]: answer
@@ -314,9 +317,7 @@ class App extends Component {
 			this.setState(() => {
 				return {
 					final: {
-						wagers: {
-							...this.state.final.wagers
-						},
+						...this.state.final,
 						answers: {
 							...otherAnswers,
 							[playerKey]: answer
@@ -349,12 +350,7 @@ class App extends Component {
 						[playerKey]: newScore
 					},
 					final: {
-						wagers: {
-							...this.state.final.wagers
-						},
-						answers: {
-							...this.state.final.answers
-						},
+						...this.state.final,
 						haveAnswered: [...playersWhoHaveAnswered, playerKey]
 					}
 				};
