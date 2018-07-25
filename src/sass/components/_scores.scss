@@ -1,25 +1,25 @@
 .score__container {
-	display: inline-flex;
+  display: inline-flex;
 }
 
 .score__button {
-	background: $jprdy-blue;
-	border: none;
-	border-radius: 0;
-	color: $jprdy-yellow;
-	font-family: 'Open Sans', sans-serif;
-	font-size: $font-md;
-	font-weight: 700;
-	margin: 1rem;
-	padding: 1rem 2rem;
+  background: $jprdy-blue;
+  border: none;
+  border-radius: 0;
+  color: $jprdy-yellow;
+  font-family: 'Open Sans', sans-serif;
+  font-size: $font-md;
+  font-weight: 700;
+  margin: 1rem;
+  padding: 1rem 2rem;
 
-	@include textShadow;
+  @include textShadow;
 
-	&:hover {
-		@include highlight-bg;
-	}
+  &:hover {
+    @include highlight-bg;
+  }
 }
 
 .score__button--active {
-	@include highlight-bg;
+  @include highlight-bg;
 }

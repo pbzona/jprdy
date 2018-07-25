@@ -1,120 +1,120 @@
 .player {
-	background: $jprdy-blue;
-	color: $white;
+  background: $jprdy-blue;
+  color: $white;
 }
 
 .player__container {
-	display: inline;
-	margin: 1rem;
-	overflow: auto;
-	text-align: center;
+  display: inline;
+  margin: 1rem;
+  overflow: auto;
+  text-align: center;
 
-	min-width: 40rem;
+  min-width: 40rem;
 }
 
 .player__input-name {
-	background: $background-gray;
-	border: none;
-	border-bottom: 2px solid $jprdy-blue;
-	color: $jprdy-blue;
-	font-size: $font-md;
-	margin-top: 20%;
-	width: 80%;
+  background: $background-gray;
+  border: none;
+  border-bottom: 2px solid $jprdy-blue;
+  color: $jprdy-blue;
+  font-size: $font-md;
+  margin-top: 20%;
+  width: 80%;
 
-	&:active,
-	&:focus {
-		outline: none;
-	}
+  &:active,
+  &:focus {
+    outline: none;
+  }
 
-	&::placeholder {
-		color: $jprdy-blue;
-	}
+  &::placeholder {
+    color: $jprdy-blue;
+  }
 }
 
 .player__submit-name {
-	border: none;
-	border-radius: 0;
-	font-family: 'Spectral', serif;
-	font-size: $font-sm;
-	margin: 0.4rem;
-	padding: 0.6rem;
-	text-transform: uppercase;
-	width: 80%;
+  border: none;
+  border-radius: 0;
+  font-family: 'Spectral', serif;
+  font-size: $font-sm;
+  margin: 0.4rem;
+  padding: 0.6rem;
+  text-transform: uppercase;
+  width: 80%;
 
-	@include textShadow;
+  @include textShadow;
 
-	&:hover {
-		color: $jprdy-yellow;
-		cursor: pointer;
-	}
+  &:hover {
+    color: $jprdy-yellow;
+    cursor: pointer;
+  }
 }
 
 .player__action {
-	font-size: $font-sm;
-	margin-bottom: 0.2rem;
-	padding: 0.8rem;
-	width: 100%;
+  font-size: $font-sm;
+  margin-bottom: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
 }
 
 .player__main {
-	height: 20rem;
-	margin-bottom: 0.2rem;
+  height: 20rem;
+  margin-bottom: 0.2rem;
 }
 
 .player__main--display {
-	display: inline-block;
-	font-family: 'Rock Salt', cursive;
-	padding: 2rem;
-	width: 100%;
+  display: inline-block;
+  font-family: 'Rock Salt', cursive;
+  padding: 2rem;
+  width: 100%;
 
-	h2 {
-		font-size: 6rem;
-		@include centerInContainer;
+  h2 {
+    font-size: 6rem;
+    @include centerInContainer;
 
-		&:hover {
-			cursor: pointer;
-		}
-	}
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .player__main--action {
-	align-items: center;
-	clear: both;
-	display: flex;
-	justify-content: center;
+  align-items: center;
+  clear: both;
+  display: flex;
+  justify-content: center;
 }
 
 .player__main--input {
-	background: $jprdy-blue;
-	border: 0;
-	border-bottom: 2px solid $white;
-	color: $white;
-	font-size: $font-sm;
-	margin: 1rem 0;
-	padding: 0.4rem;
-	width: 80%;
+  background: $jprdy-blue;
+  border: 0;
+  border-bottom: 2px solid $white;
+  color: $white;
+  font-size: $font-sm;
+  margin: 1rem 0;
+  padding: 0.4rem;
+  width: 80%;
 
-	&::placeholder {
-		color: $light-gray;
-	}
+  &::placeholder {
+    color: $light-gray;
+  }
 
-	&:active,
-	&:focus {
-		outline: none;
-	}
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }
 
 .player__score {
-	display: block;
-	float: left;
-	text-align: center;
-	width: 100%;
-	margin-bottom: 0.2rem;
+  display: block;
+  float: left;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0.2rem;
 
-	h2 {
-		margin: 1.6rem;
-		font-size: $font-md;
+  h2 {
+    margin: 1.6rem;
+    font-size: $font-md;
 
-		@include textShadow;
-	}
+    @include textShadow;
+  }
 }

@@ -1,22 +1,22 @@
 .list {
-	margin: 1rem auto;
-	text-align: center;
+  margin: 1rem auto;
+  text-align: center;
 }
 
 .list--action {
-	width: 50%;
+  width: 50%;
 }
 
 .list--score-buttons {
-	width: 100%;
+  width: 100%;
 }
 
 .list--players {
-	display: flex;
-	flex-direction: row;
-	height: auto;
-	margin: 1rem auto;
-	justify-content: space-around;
-	overflow: auto;
-	width: auto;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin: 1rem auto;
+  justify-content: space-around;
+  overflow: auto;
+  width: auto;
 }

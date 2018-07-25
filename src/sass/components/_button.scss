@@ -1,92 +1,90 @@
 .button {
-	background: $jprdy-blue;
-	border-radius: 0;
-	color: $white;
-	font-size: $font-sm;
-	padding: 0.8rem;
-	text-transform: uppercase;
+  background: $jprdy-blue;
+  border-radius: 0;
+  color: $white;
+  font-size: $font-sm;
+  padding: 0.8rem;
+  text-transform: uppercase;
 }
 
 .button--action {
-	border: 2px solid $background-gray;
-	font-family: 'Spectral', serif;
-	width: 100%;
+  border: 2px solid $background-gray;
+  font-family: 'Spectral', serif;
+  width: 100%;
 
-	@include textShadow;
+  @include textShadow;
 
-	&:hover {
-		color: $jprdy-yellow;
-		cursor: pointer;
-	}
+  &:hover {
+    color: $jprdy-yellow;
+    cursor: pointer;
+  }
 }
 
 .button--final {
-	background: $jprdy-blue;
-	border: none;
-	color: $white;
-	font-family: 'Spectral', serif;
-	text-transform: uppercase;
+  background: $jprdy-blue;
+  border: none;
+  color: $white;
+  font-family: 'Spectral', serif;
+  text-transform: uppercase;
 
-	@include textShadow;
+  @include textShadow;
 
-	&:hover {
-		@include highlight-bg;
-	}
+  &:hover {
+    @include highlight-bg;
+  }
 }
 
 .button__daily-double {
-	background: $jprdy-blue;
-	background-image: none;
-	border: none;
-	border-radius: 0;
-	color: $light-gray;
-	font-family: 'Spectral', serif;
-	font-size: $font-sm;
-	font-weight: 700;
-	text-transform: uppercase;
+  background: $jprdy-blue;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  color: $light-gray;
+  font-family: 'Spectral', serif;
+  font-size: $font-sm;
+  font-weight: 700;
+  text-transform: uppercase;
 
-	@include textShadow;
+  @include textShadow;
 
-	&:hover {
-		@include highlight-bg;
-	}
+  &:hover {
+    @include highlight-bg;
+  }
 }
 
 .button__answer {
-	background: $light-gray;
-	border: none;
-	font-size: $font-sm;
-	padding: 1rem;
-	width: 50%;
+  background: $light-gray;
+  border: none;
+  font-size: $font-sm;
+  padding: 1rem;
+  width: 50%;
 
-	&:hover {
-		cursor: pointer;
-	}
+  &:hover {
+    cursor: pointer;
+  }
 
-	&:active,
-	&:focus {
-		outline: none;
-	}
+  &:active,
+  &:focus {
+    outline: none;
+  }
 
-	&--right {
-		color: #579532;
-		transition: all 0.4s ease;
+  &--right {
+    color: #579532;
+    transition: all 0.4s ease;
 
-		&:hover {
-			background: #579532;
-			color: #eee;
-		}
-	}
+    &:hover {
+      background: #579532;
+      color: #eee;
+    }
+  }
 
-	&--wrong {
-		color: #aa3939;
-		transition: all 0.4s ease;
+  &--wrong {
+    color: #aa3939;
+    transition: all 0.4s ease;
 
-		&:hover {
-			background: #aa3939;
-			color: #eee;
-		}
-	}
+    &:hover {
+      background: #aa3939;
+      color: #eee;
+    }
+  }
 }
-
-

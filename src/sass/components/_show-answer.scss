@@ -1,15 +1,15 @@
 .show-answer__container {
-	background: $jprdy-blue;
-	text-align: center;
+  background: $jprdy-blue;
+  text-align: center;
 }
 
 .show-answer__text {
-	border: none;
-	border-radius: 0;
-	color: #fff;
-	font-family: 'Spectral', serif;
-	text-transform: uppercase;
-	width: 100%;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-family: 'Spectral', serif;
+  text-transform: uppercase;
+  width: 100%;
 
-	@include textShadow;
+  @include textShadow;
 }
