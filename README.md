@@ -8,19 +8,20 @@ close" or, "nah, I think we tied."
 There are plenty of React-based Jeopardy scoreboards out there. But none of them
 have the UI that I think they should. Hence, _Jprdy!_ was born.
 
-![Jprdy](./jprdy-screenshot.png?raw=true "Jprdy")
+![Jprdy](./jprdy-screenshot.png?raw=true 'Jprdy')
 
 ## How to use it
 
 If you just want to play with the app, you can use it here:
 
-[JPRDY](https://jprdy.phizon.io)
+[JPRDY](https://jprdy.com)
 
 As of right now, you can play a full game of Jeopardy, all the way through to
 the final round. This build reflects the latest release, but you can get the
 bleeding edge version by cloning the project and running these commands:
 
-`npm install` `npm start`
+`npm install`
+`npm start`
 
 ### The First Round
 
@@ -87,10 +88,10 @@ ways at home.
 
 The concept for _Jprdy!_ is based on three requirements:
 
-1. It must run 100% in the browser, no backend
-2. Data must be persistent if the user exits or accidentally hits the back
-	button
-3. It must be a single page app with no routing
+1.  It must run 100% in the browser, no backend
+2.  Data must be persistent if the user exits or accidentally hits the back
+    button
+3.  It must be a single page app with no routing
 
 Reconciling these two was a challenge at first. I decided to hold state in the
 browser's `localStorage` and totally forgo traditional state containers like
@@ -106,15 +107,14 @@ The genesis for this project was its design. I mentioned earlier that there are
 other React Jeopardy scoreboards out there that aren't aligned with my vision.
 What is my vision exactly? I'm glad you asked:
 
-* Buttons from which you select an "active" value depending on the question
-	being asked
-* A one-click "right" or "wrong" button to indicate whether a player answered
-	correctly, and modify their current score based on the active value
-* Actually looks like Jeopardy
+- Buttons from which you select an "active" value depending on the question
+  being asked
+- A one-click "right" or "wrong" button to indicate whether a player answered
+  correctly, and modify their current score based on the active value
+- Actually looks like Jeopardy
 
 This project was bootstrapped using `create-react-app`, so you can see the first
-two for yourself by installing the project and running `npm start` or `yarn
-start`.
+two for yourself by installing the project and running `npm start` or `yarn start`.
 
 The third piece was the most fun to implement. For the header text, I used a
 free web font called Gyparody (great name). The actual Jeopardy number scores
@@ -142,7 +142,7 @@ commit - removing the add player button once the game starts.
 
 ## Still to-do
 
-* Cleaner UX
-* Error handling
-* Write tests
-* Mobile friendliness (currently Jprdy looks best on a full size screen)
+- Cleaner UX
+- Error handling
+- Write tests
+- Mobile friendliness (currently Jprdy looks best on a full size screen)
