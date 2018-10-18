@@ -20,6 +20,7 @@ const initState = {
     haveAnswered: []
   },
   isFinalWager: false,
+  isFinalAnswer: false,
   gameInProgress: false
 };
 
@@ -43,6 +44,7 @@ class App extends Component {
     this.onFinalWager = this.onFinalWager.bind(this);
     this.onLockFinalWagers = this.onLockFinalWagers.bind(this);
     this.onFinalAnswer = this.onFinalAnswer.bind(this);
+    this.onLockFinalAnswers = this.onLockFinalAnswers.bind(this);
     this.onFinalAnswerCheck = this.onFinalAnswerCheck.bind(this);
   }
 
@@ -285,9 +287,9 @@ class App extends Component {
     if (this.state.players.length === 1) {
       isFinalWager = true;
     } else {
-      //
+      // If others have wagered, check to see if everyone has entered at least one wager
       isFinalWager = otherWagers
-        ? Object.keys(otherWagers).length === this.state.players.length - 1
+        ? Object.keys(otherWagers).length >= this.state.players.length - 1
         : false;
     }
 
@@ -330,38 +332,33 @@ class App extends Component {
       isFinalAnswer = true;
     } else {
       isFinalAnswer = otherAnswers
-        ? Object.keys(otherAnswers).length === this.state.players.length - 1
+        ? Object.keys(otherAnswers).length >= this.state.players.length - 1
         : false;
     }
 
-    if (isFinalAnswer) {
-      this.setState(() => {
-        return {
-          final: {
-            ...this.state.final,
-            answers: {
-              ...otherAnswers,
-              [playerKey]: answer
-            }
-          },
-          round: 5
-        };
-      });
-    } else {
-      this.setState(() => {
-        return {
-          final: {
-            ...this.state.final,
-            answers: {
-              ...otherAnswers,
-              [playerKey]: answer
-            }
+    this.setState(() => {
+      return {
+        final: {
+          ...this.state.final,
+          answers: {
+            ...otherAnswers,
+            [playerKey]: answer
           }
-        };
-      });
-    }
+        },
+        isFinalAnswer
+      };
+    });
 
     document.querySelector(`.final-answer-${playerKey}`).value = '';
+  }
+
+  // Lock in final answers
+  onLockFinalAnswers() {
+    this.setState(() => {
+      return {
+        round: 5
+      };
+    });
   }
 
   //Checks to see if Final Jeopardy answer was correct
@@ -427,7 +424,9 @@ class App extends Component {
             onClearScores={this.onClearScores}
             onReset={this.onReset}
             isFinalWager={this.state.isFinalWager}
+            isFinalAnswer={this.state.isFinalAnswer}
             onLockFinalWagers={this.onLockFinalWagers}
+            onLockFinalAnswers={this.onLockFinalAnswers}
           />
         </div>
         <Footer />

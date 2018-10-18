@@ -15,6 +15,15 @@ const ActionList = props => {
         )}
 
       {!props.addingPlayer &&
+        props.round === 4 &&
+        props.isFinalAnswer && (
+          <ActionButton
+            buttonFunction={props.onLockFinalAnswers}
+            buttonText="Finalize Answers"
+          />
+        )}
+
+      {!props.addingPlayer &&
         props.numPlayers < 4 &&
         !props.gameInProgress &&
         props.round === 1 && (
