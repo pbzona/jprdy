@@ -24,6 +24,10 @@ const ActionList = props => {
           />
         )}
 
+      <ActionButton
+        buttonFunction={props.onClearScores}
+        buttonText="Clear Scores"
+      />
       <ActionButton buttonFunction={props.onReset} buttonText="New Game" />
     </div>
   );

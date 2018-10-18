@@ -29,6 +29,7 @@ class App extends Component {
     this.state = initState;
 
     this.handleScores = this.handleScores.bind(this);
+    this.onClearScores = this.onClearScores.bind(this);
     this.onReset = this.onReset.bind(this);
     this.onSelectValue = this.onSelectValue.bind(this);
     this.onAddPlayer = this.onAddPlayer.bind(this);
@@ -65,6 +66,21 @@ class App extends Component {
   componentDidUpdate() {
     localStorage.setItem('appState', JSON.stringify(this.state));
     this.handleScores();
+  }
+
+  // Clears scores, but does not reset player information
+  onClearScores() {
+    const playerScores = Object.keys(this.state.playerScores);
+    playerScores.forEach((score, playerKey) => {
+      this.setState(() => {
+        return {
+          playerScores: {
+            ...playerScores,
+            [playerKey]: 0
+          }
+        };
+      });
+    });
   }
 
   // Reset state
@@ -393,6 +409,7 @@ class App extends Component {
             numPlayers={this.state.players.length}
             round={this.state.round}
             onRoundChange={this.onRoundChange}
+            onClearScores={this.onClearScores}
             onReset={this.onReset}
           />
         </div>
