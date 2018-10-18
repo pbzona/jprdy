@@ -6,6 +6,15 @@ const ActionList = props => {
   return (
     <div className="list list--action">
       {!props.addingPlayer &&
+        props.round === 3 &&
+        props.isFinalWager && (
+          <ActionButton
+            buttonFunction={props.onLockFinalWagers}
+            buttonText="Lock in Wagers"
+          />
+        )}
+
+      {!props.addingPlayer &&
         props.numPlayers < 4 &&
         !props.gameInProgress &&
         props.round === 1 && (

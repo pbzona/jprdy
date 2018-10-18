@@ -19,6 +19,7 @@ const initState = {
     answers: {},
     haveAnswered: []
   },
+  isFinalWager: false,
   gameInProgress: false
 };
 
@@ -40,6 +41,7 @@ class App extends Component {
     this.onWager = this.onWager.bind(this);
     this.onStartWager = this.onStartWager.bind(this);
     this.onFinalWager = this.onFinalWager.bind(this);
+    this.onLockFinalWagers = this.onLockFinalWagers.bind(this);
     this.onFinalAnswer = this.onFinalAnswer.bind(this);
     this.onFinalAnswerCheck = this.onFinalAnswerCheck.bind(this);
   }
@@ -290,35 +292,31 @@ class App extends Component {
     }
 
     if (wager <= this.state.playerScores[playerKey]) {
-      if (isFinalWager) {
-        this.setState(() => {
-          return {
-            final: {
-              wagers: {
-                ...otherWagers,
-                [playerKey]: wager
-              }
-            },
-            round: 4
-          };
-        });
-      } else {
-        this.setState(() => {
-          return {
-            final: {
-              wagers: {
-                ...otherWagers,
-                [playerKey]: wager
-              }
+      this.setState(() => {
+        return {
+          final: {
+            wagers: {
+              ...otherWagers,
+              [playerKey]: wager
             }
-          };
-        });
-      }
+          },
+          isFinalWager
+        };
+      });
     } else {
       alert('Wager must be less than or equal to your score');
     }
 
     document.querySelector(`.final-wager-${playerKey}`).value = '';
+  }
+
+  // Lock in final wager and move to the answer portion of final Jeopardy
+  onLockFinalWagers() {
+    this.setState(() => {
+      return {
+        round: 4
+      };
+    });
   }
 
   // Lock in your final answers after placing wagers
@@ -424,11 +422,12 @@ class App extends Component {
             addingPlayer={this.state.addingPlayer}
             numPlayers={this.state.players.length}
             round={this.state.round}
-            onRoundChange={this.onRoundChange}
             onToggleRound={this.onToggleRound}
             onGoToFinalRound={this.onGoToFinalRound}
             onClearScores={this.onClearScores}
             onReset={this.onReset}
+            isFinalWager={this.state.isFinalWager}
+            onLockFinalWagers={this.onLockFinalWagers}
           />
         </div>
         <Footer />
