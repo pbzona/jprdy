@@ -214,17 +214,26 @@ class App extends Component {
     const newPlayer = document.querySelector('.player__input-name').value;
     const newPlayerList = this.state.players.slice(0, -1).concat(newPlayer);
     const otherScores = this.state.playerScores;
-
-    this.setState(() => {
-      return {
-        players: newPlayerList,
-        addingPlayer: false,
-        playerScores: {
-          ...otherScores,
-          [newPlayerList.length - 1]: 0
-        }
-      };
+    const players = this.state.players.map(player => {
+      return player.toLowerCase();
     });
+
+    if (!players.includes(newPlayer.toLowerCase())) {
+      this.setState(() => {
+        return {
+          players: newPlayerList,
+          addingPlayer: false,
+          playerScores: {
+            ...otherScores,
+            [newPlayerList.length - 1]: 0
+          }
+        };
+      });
+    } else {
+      alert(
+        `${newPlayer} has already been added. Please choose a different name.`
+      );
+    }
   }
 
   // Handle colors for positive (white) and negative (red) scores
