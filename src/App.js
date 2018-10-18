@@ -257,29 +257,33 @@ class App extends Component {
         : false;
     }
 
-    if (isFinalWager) {
-      this.setState(() => {
-        return {
-          final: {
-            wagers: {
-              ...otherWagers,
-              [playerKey]: wager
+    if (wager <= this.state.playerScores[playerKey]) {
+      if (isFinalWager) {
+        this.setState(() => {
+          return {
+            final: {
+              wagers: {
+                ...otherWagers,
+                [playerKey]: wager
+              }
+            },
+            round: 4
+          };
+        });
+      } else {
+        this.setState(() => {
+          return {
+            final: {
+              wagers: {
+                ...otherWagers,
+                [playerKey]: wager
+              }
             }
-          },
-          round: 4
-        };
-      });
+          };
+        });
+      }
     } else {
-      this.setState(() => {
-        return {
-          final: {
-            wagers: {
-              ...otherWagers,
-              [playerKey]: wager
-            }
-          }
-        };
-      });
+      alert('Wager must be less than or equal to your score');
     }
 
     document.querySelector(`.final-wager-${playerKey}`).value = '';
