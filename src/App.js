@@ -74,6 +74,7 @@ class App extends Component {
   }
 
   // Clears scores, but does not reset player information
+  // i.e. you finish a game and want to play again with the same players
   onClearScores() {
     const playerScores = Object.keys(this.state.playerScores);
     playerScores.forEach((score, playerKey) => {
@@ -82,7 +83,9 @@ class App extends Component {
           playerScores: {
             ...playerScores,
             [playerKey]: 0
-          }
+          },
+          // Set progress to false so that you can add more players if needed
+          gameInProgress: false
         };
       });
     });

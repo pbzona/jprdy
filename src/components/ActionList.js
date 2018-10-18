@@ -57,7 +57,7 @@ const ActionList = props => {
         buttonFunction={props.onClearScores}
         buttonText="Clear Scores"
       />
-      <ActionButton buttonFunction={props.onReset} buttonText="New Game" />
+      <ActionButton buttonFunction={props.onReset} buttonText="Clear All" />
     </div>
   );
 };
