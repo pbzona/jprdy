@@ -10,7 +10,7 @@ const ActionList = props => {
         props.isFinalWager && (
           <ActionButton
             buttonFunction={props.onLockFinalWagers}
-            buttonText="Lock in Wagers"
+            buttonText="Finalize Wagers"
           />
         )}
 
