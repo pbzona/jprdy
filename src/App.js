@@ -257,7 +257,21 @@ class App extends Component {
 
   // Handles a wager, ie daily double
   onWager(playerKey, isCorrect) {
+    const playerScore = this.state.playerScores[playerKey];
     let wager = parseInt(document.querySelector('.player-wager').value, 10);
+
+    // If wager is higher than the player's score, reduce it to the greater of:
+    // - The player's score
+    // - The maximum wager for that round (1000 for first round, 2000 for second)
+    if (wager > playerScore) {
+      let max;
+      if (this.state.round === 1) {
+        max = 1000;
+      } else {
+        max = 2000;
+      }
+      wager = wager > max ? max : wager;
+    }
 
     if (!wager) {
       this.setState(() => {
@@ -266,9 +280,7 @@ class App extends Component {
         };
       });
     } else {
-      const newScore = isCorrect
-        ? this.state.playerScores[playerKey] + wager
-        : this.state.playerScores[playerKey] - wager;
+      const newScore = isCorrect ? playerScore + wager : playerScore - wager;
       const otherScores = this.state.playerScores;
       const correctedPlayer = this.state.isWagering - 1;
 
