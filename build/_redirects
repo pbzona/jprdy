@@ -1,4 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-
-http://jprdy.netlify.com/* http://jprdy.com/:splat 301!
-
