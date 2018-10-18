@@ -15,12 +15,23 @@ const ActionList = props => {
           />
         )}
 
-      {props.round < 3 &&
+      {!props.addingPlayer &&
+        props.round < 3 &&
+        props.numPlayers >= 1 && (
+          <ActionButton
+            buttonFunction={props.onToggleRound}
+            buttonText={
+              props.round < 2 ? 'Double Jeopardy' : 'Back to First Round'
+            }
+          />
+        )}
+
+      {props.round === 2 &&
         props.numPlayers >= 1 &&
         !props.addingPlayer && (
           <ActionButton
-            buttonFunction={props.onRoundChange}
-            buttonText={props.round < 2 ? 'Double Jeopardy' : 'Final Jeopardy'}
+            buttonFunction={props.onGoToFinalRound}
+            buttonText={'Final Jeopardy'}
           />
         )}
 

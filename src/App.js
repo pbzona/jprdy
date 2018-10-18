@@ -34,7 +34,8 @@ class App extends Component {
     this.onSelectValue = this.onSelectValue.bind(this);
     this.onAddPlayer = this.onAddPlayer.bind(this);
     this.onAnswer = this.onAnswer.bind(this);
-    this.onRoundChange = this.onRoundChange.bind(this);
+    this.onToggleRound = this.onToggleRound.bind(this);
+    this.onGoToFinalRound = this.onGoToFinalRound.bind(this);
     this.onCreatePlayer = this.onCreatePlayer.bind(this);
     this.onWager = this.onWager.bind(this);
     this.onStartWager = this.onStartWager.bind(this);
@@ -143,26 +144,41 @@ class App extends Component {
     });
   }
 
-  // Handle round changes
-  onRoundChange() {
+  // Following 2 methods handle round changes in a way that allows user to move between first
+  // and second rounds without restarting, and to explicitly go to final jeopardy only when they mean to.
+
+  // Toggles first and second rounds
+  onToggleRound() {
     if (this.state.round === 1) {
       const newValues = this.state.buttonValues.map(value => {
         return value * 2;
       });
-
       this.setState(() => {
         return {
           buttonValues: newValues,
           round: 2
         };
       });
-    } else {
+    } else if (this.state.round === 2) {
+      const newValues = this.state.buttonValues.map(value => {
+        return value / 2;
+      });
       this.setState(() => {
         return {
-          round: 3
+          buttonValues: newValues,
+          round: 1
         };
       });
     }
+  }
+
+  // Go to final Jeopardy round
+  onGoToFinalRound() {
+    this.setState(() => {
+      return {
+        round: 3
+      };
+    });
   }
 
   // If less than four players, allow adding new ones
@@ -409,6 +425,8 @@ class App extends Component {
             numPlayers={this.state.players.length}
             round={this.state.round}
             onRoundChange={this.onRoundChange}
+            onToggleRound={this.onToggleRound}
+            onGoToFinalRound={this.onGoToFinalRound}
             onClearScores={this.onClearScores}
             onReset={this.onReset}
           />
