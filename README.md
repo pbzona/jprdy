@@ -133,12 +133,8 @@ I moved to a [release system](https://github.com/pbzona/jprdy/releases), so I'll
 try to provide incremental updates here when it makes sense, rather than
 tracking daily changes like before.
 
-Currently in v0.4, which is a more maintainable codebase with more sensible
-component separation, and styles that are mostly BEM compliant. These areas will
-continue to be improved in the next release, and I'll also address some small
-feature improvements that will make the user experience a little better. A good
-example of the scope of these improvements is a feature added in the previous
-commit - removing the add player button once the game starts.
+Currently in v0.5, which is a more maintainable codebase with more sensible
+component separation, and styles that are mostly BEM compliant. The main focus for the next few releases will be mobile friendliness as well as interface improvements such as moving from native browser alerts to custom modals and things like that.
 
 ## Still to-do
 
