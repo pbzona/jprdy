@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Store from 'store';
 
 import Header from './components/Header';
 import ScoreButtonList from './components/ScoreButtonList';
@@ -48,9 +49,9 @@ class App extends Component {
     this.onFinalAnswerCheck = this.onFinalAnswerCheck.bind(this);
   }
 
-  // Load from localStorage if present
+  // Load from local storage if present
   componentWillMount() {
-    const appState = JSON.parse(localStorage.getItem('appState'));
+    const appState = Store.get('appState');
     if (appState) {
       this.setState(() => {
         return {
@@ -61,15 +62,15 @@ class App extends Component {
     }
   }
 
-  // Save state to localStorage on creation
+  // Save state to local storage on creation
   componentDidMount() {
-    localStorage.setItem('appState', JSON.stringify(this.state));
+    Store.set('appState', this.state);
     this.handleScores();
   }
 
-  // Save state to localStorage on update
+  // Save state to local storage on update
   componentDidUpdate() {
-    localStorage.setItem('appState', JSON.stringify(this.state));
+    Store.set('appState', this.state);
     this.handleScores();
   }
 
