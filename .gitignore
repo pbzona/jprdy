@@ -21,3 +21,4 @@ yarn-error.log*
 
 # generated CSS file - the new start script builds it
 /src/sass/*.css
+.vercel
